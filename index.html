@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="SERENITY administra y moderniza los servicios del Cementerio del Ángel en Lima.">
 <title>SERENITY · Cementerio del Ángel</title>
-<script>try{var t=localStorage.getItem('tema');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script>/* Modo oscuro desactivado por ahora: siempre tema claro, aunque el dispositivo esté en modo oscuro */document.documentElement.setAttribute('data-theme','light')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
@@ -460,6 +460,12 @@ form.quote input,form.quote select,form.quote textarea,.bform input{border-radiu
 .figure:has(img.pos-team){aspect-ratio:4/3}
 .figure img.pos-team{object-position:50% 82%}
 .figure img.pos-capilla{object-position:50% 30%}
+.valores{margin-top:44px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;text-align:center}
+.valores .ic{display:grid;place-items:center;width:76px;height:76px;margin:0 auto 14px;border-radius:50%;background:var(--celeste);color:var(--azul)}
+.valores div:nth-child(even) .ic{background:var(--verde)}
+.valores .ic svg{width:32px;height:32px}
+.valores h3{font-size:.92rem;color:var(--heading)}
+@media (max-width:760px){.valores{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 16px}}
 .theme-toggle{display:none!important} /* botón de modo nocturno oculto por ahora */
 p,dd,li{overflow-wrap:anywhere} /* correos largos no desbordan en celular */
 .topbar .wrap{font-size:.84rem;white-space:nowrap}
@@ -616,11 +622,11 @@ p,dd,li{overflow-wrap:anywhere} /* correos largos no desbordan en celular */
         </div>
         <div class="figure"><img class="pos-team" src="img/equipo-1.jpg" alt="Equipo de SERENITY junto al monumento del Ángel de la Resurrección" loading="lazy"><figcaption>Equipo SERENITY junto al Ángel de la Resurrección</figcaption></div>
       </div>
-      <div class="values">
-        <div><h3>Respeto</h3></div>
-        <div><h3>Claridad</h3></div>
-        <div><h3>Mejora continua</h3></div>
-        <div><h3>Sostenibilidad</h3></div>
+      <div class="valores">
+        <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span><h3>Respeto</h3></div>
+        <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg></span><h3>Claridad</h3></div>
+        <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6 4 4 6-7"/><path d="M15 8h5v5"/></svg></span><h3>Mejora continua</h3></div>
+        <div><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 6-13 14-14-1 8-6 14-14 14z"/><path d="M5 19c3-4 6-6.5 9-8"/></svg></span><h3>Sostenibilidad</h3></div>
       </div>
       <p class="role">
       <svg aria-hidden="true"><use href="#i-info"/></svg>
