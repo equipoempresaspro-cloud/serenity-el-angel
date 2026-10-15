@@ -3,43 +3,45 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="SERENITY administra y moderniza los servicios del Cementerio El Ángel en Lima.">
-<title>SERENITY El Ángel</title>
+<meta name="description" content="SERENITY administra y moderniza los servicios del Cementerio del Ángel en Lima.">
+<title>SERENITY · Cementerio del Ángel</title>
 <script>try{var t=localStorage.getItem('tema');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
 <style>
 :root{
   /* Paleta de marca (post de Instagram Serenity) */
   --azul:#19375B;     /* primario: fondos, títulos, footer */
-  --celeste:#6BABD9;  /* secundario: botones, detalles sobre azul */
+  --celeste:#6CAADA;  /* secundario: botones, detalles sobre azul */
   --salvia:#AFD4B2;   /* acento: indicadores, barras de cita */
   --arena:#E1D6C0;    /* neutro cálido: tarjetas, superficies */
-  --blanco:#F7F5F0;
+  --blanco:#EFEBE0;
+  --verde:#AFD4B2;    /* verde de marca (único tono de verde) */
+  --verde-osc:#19375B;/* azul de marca para fondos oscuros */
   --carbon:#2A3440;
 
   --bg:var(--blanco);
-  --surface:#FFFFFF;
-  --surface-2:#EEE8DC;
+  --surface:#EFEBE0;
+  --surface-2:#AFD4B2;
   --ink:var(--carbon);
   --ink-soft:#56606B;
   --line:#D9D1C2;
   --accent:var(--azul);
-  --accent-ink:#FFFFFF;
-  --link:var(--azul);
+  --accent-ink:#EFEBE0;
+  --link:var(--verde-osc);
   --heading:var(--azul);
-  --detail:#285F8F;   /* celeste oscurecido: texto de detalle legible sobre fondos claros */
+  --detail:#19375B;   /* celeste oscurecido: texto de detalle legible sobre fondos claros */
   --cta:var(--celeste);
   --cta-ink:var(--azul);
-  --footer-bg:var(--azul);
+  --footer-bg:var(--verde-osc);
   --footer-ink:#E6ECF3;
   --footer-soft:#A9BCD1;
-  --pill-ok-bg:#E2F0E3; --pill-ok-ink:#2C5A33;
+  --pill-ok-bg:#AFD4B2; --pill-ok-ink:#19375B;
   --pill-dev-bg:#F0E9DB; --pill-dev-ink:#6B5A38;
 
-  --display:"Jost","Futura","Century Gothic","Avenir Next",system-ui,sans-serif;
-  --body:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
+  --display:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
   --wrap:1200px;
   --gutter:clamp(16px,4vw,40px);
 }
@@ -48,10 +50,10 @@
     color-scheme:dark;
     --bg:#0F1E30; --surface:#152840; --surface-2:#1B3150;
     --ink:#E8EDF3; --ink-soft:#AEBBCB; --line:#2A4262;
-    --accent:#6BABD9; --accent-ink:#19375B; --link:#9CCBEC; --heading:#E8EDF3;
-    --detail:#6BABD9; --cta:#6BABD9; --cta-ink:#19375B;
+    --accent:#6CAADA; --accent-ink:#19375B; --link:#6CAADA; --heading:#E8EDF3;
+    --detail:#6CAADA; --cta:#6CAADA; --cta-ink:#19375B;
     --footer-bg:#0A1624; --footer-ink:#E6ECF3; --footer-soft:#93A5BB;
-    --pill-ok-bg:#1F3A2A; --pill-ok-ink:#BFE3C3;
+    --pill-ok-bg:#AFD4B2; --pill-ok-ink:#19375B;
     --pill-dev-bg:#3A3226; --pill-dev-ink:#E6D6B4;
   }
 }
@@ -59,10 +61,10 @@
   color-scheme:dark;
   --bg:#0F1E30; --surface:#152840; --surface-2:#1B3150;
   --ink:#E8EDF3; --ink-soft:#AEBBCB; --line:#2A4262;
-  --accent:#6BABD9; --accent-ink:#19375B; --link:#9CCBEC; --heading:#E8EDF3;
-  --detail:#6BABD9; --cta:#6BABD9; --cta-ink:#19375B;
+  --accent:#6CAADA; --accent-ink:#19375B; --link:#6CAADA; --heading:#E8EDF3;
+  --detail:#6CAADA; --cta:#6CAADA; --cta-ink:#19375B;
   --footer-bg:#0A1624; --footer-ink:#E6ECF3; --footer-soft:#93A5BB;
-  --pill-ok-bg:#1F3A2A; --pill-ok-ink:#BFE3C3;
+  --pill-ok-bg:#AFD4B2; --pill-ok-ink:#19375B;
   --pill-dev-bg:#3A3226; --pill-dev-ink:#E6D6B4;
 }
 
@@ -82,15 +84,15 @@ p{margin:0}
 .stack>*+*{margin-top:14px}
 
 /* ---------- Barra superior ---------- */
-.topbar{background:var(--azul);color:#F7F5F0;font-size:.9rem;position:relative;z-index:45}
-.topbar .wrap{display:flex;gap:6px 24px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding-block:7px}
+.topbar{background:var(--verde);color:var(--azul);font-size:.9rem;position:relative;z-index:45}
+.topbar .wrap{display:flex;gap:6px 24px;align-items:center;justify-content:space-between;flex-wrap:nowrap;padding-block:7px}
 .topbar strong{font-weight:600}
-.topbar .nums{display:flex;gap:18px;flex-wrap:wrap}
-.topbar .tools{display:flex;align-items:center;gap:8px 20px;flex-wrap:wrap}
+.topbar .nums{display:flex;gap:18px;flex-wrap:nowrap}
+.topbar .tools{display:flex;align-items:center;gap:8px 20px;flex-wrap:nowrap}
 .topbar .online>button{padding:6px 12px;font-size:.7rem}
 .topbar .online .menu{z-index:60}
 .topbar .nums span{white-space:nowrap}
-.topbar .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--salvia);margin-right:7px;vertical-align:1px}
+.topbar .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--azul);margin-right:7px;vertical-align:1px}
 @media (max-width:640px){.topbar .msg{display:none}}
 
 /* ---------- Cabecera ---------- */
@@ -140,7 +142,7 @@ nav.main a[aria-current="page"]{color:var(--link);border-bottom-color:var(--deta
 @media (prefers-reduced-motion:reduce){.page{animation:none}}
 
 /* Hero de inicio */
-.hero{position:relative;color:#FFFFFF;overflow:hidden;background:#19375B}
+.hero{position:relative;color:#EFEBE0;overflow:hidden;background:#19375B}
 .hero svg.scene,.phero svg.scene{position:absolute;inset:0;width:100%;height:100%}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,30,52,.74) 0%,rgba(12,30,52,.46) 45%,rgba(12,30,52,.08) 80%),linear-gradient(180deg,rgba(12,30,52,0) 40%,rgba(12,30,52,.55) 100%)}
 .hero .wrap{position:relative;z-index:1;padding-block:clamp(110px,18vw,210px) clamp(90px,10vw,130px)}
@@ -152,16 +154,16 @@ nav.main a[aria-current="page"]{color:var(--link);border-bottom-color:var(--deta
 .slide{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 1s ease-in-out}
 .slide.on{opacity:1}
 .slide img{width:100%;height:100%;object-fit:cover;display:block}
-.slide figcaption{position:absolute;right:var(--gutter);top:12px;z-index:2;font-size:.68rem;letter-spacing:.04em;color:rgba(255,255,255,.82);background:rgba(12,30,52,.45);padding:2px 8px}
+.slide figcaption{position:absolute;right:var(--gutter);top:12px;z-index:2;font-size:.68rem;letter-spacing:.04em;color:rgba(239,235,224,.82);background:rgba(12,30,52,.45);padding:2px 8px}
 .dots{position:absolute;z-index:2;left:50%;transform:translateX(-50%);bottom:122px;display:flex;gap:10px}
-.dots button{width:30px;height:3px;padding:0;border:0;background:rgba(255,255,255,.45);cursor:pointer}
+.dots button{width:30px;height:3px;padding:0;border:0;background:rgba(239,235,224,.45);cursor:pointer}
 .dots button[aria-current="true"]{background:var(--celeste)}
 .dots button::before{content:"";display:block;margin:-10px 0;height:23px}
 @media (max-width:820px){.dots{bottom:118px}}
-.photo-note{position:absolute;right:var(--gutter);top:14px;z-index:1;font-size:.7rem;letter-spacing:.06em;color:rgba(255,255,255,.8);background:rgba(12,30,52,.45);padding:3px 8px}
+.photo-note{position:absolute;right:var(--gutter);top:14px;z-index:1;font-size:.7rem;letter-spacing:.06em;color:rgba(239,235,224,.8);background:rgba(12,30,52,.45);padding:3px 8px}
 
 /* Hero de subpágina (como las subpáginas de Hamburgo) */
-.phero{position:relative;color:#fff;overflow:hidden;background:#19375B}
+.phero{position:relative;color:#EFEBE0;overflow:hidden;background:#19375B}
 .phero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,30,52,.78) 0%,rgba(12,30,52,.5) 50%,rgba(12,30,52,.15) 100%)}
 .phero .wrap{position:relative;z-index:1;padding-block:clamp(70px,11vw,130px) 36px}
 .phero h1{font-size:clamp(1.7rem,4.2vw,2.9rem);max-width:22ch;letter-spacing:.05em}
@@ -176,13 +178,13 @@ nav.main a[aria-current="page"]{color:var(--link);border-bottom-color:var(--deta
 .access{position:relative;z-index:2}
 .hero .eyebrow{color:var(--celeste);margin-bottom:14px}
 .hero .callrow{margin-top:28px}
-.btn.light{border-color:rgba(255,255,255,.7);color:#fff;background:transparent}
+.btn.light{border-color:rgba(239,235,224,.7);color:#EFEBE0;background:transparent}
 .intro .values{margin-top:44px}
 .intro .role{margin-top:28px}
 .access .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px}
 .access .grid a{display:flex;flex-direction:column;gap:10px;padding:24px 24px 22px;text-decoration:none;color:var(--ink);background:var(--surface);min-height:190px;transition:transform .2s ease,box-shadow .2s ease;box-shadow:0 10px 26px rgba(25,55,91,.10)}
 .access .grid a:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(25,55,91,.16)}
-.access .grid a.urgent{background:var(--azul);color:#fff}
+.access .grid a.urgent{background:var(--azul);color:#EFEBE0}
 .access .k{font-family:var(--display);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--detail)}
 .access .grid a.urgent .k{color:var(--celeste)}
 .access .t{font-family:var(--display);font-size:1.38rem;text-transform:uppercase;letter-spacing:.06em;font-weight:300;line-height:1.15}
@@ -276,7 +278,7 @@ tbody tr:last-child>*{border-bottom:0}
 .benefit p{color:var(--ink-soft)}
 .benefit strong{display:block;color:var(--ink);font-weight:600}
 @media (max-width:640px){.benefits{grid-template-columns:1fr}}
-.panel{background:var(--azul);color:#fff;padding:30px}
+.panel{background:var(--verde-osc);color:#EFEBE0;padding:30px}
 .panel h3{margin-bottom:12px}
 .panel p{color:#DCE6F0}
 .panel .btn{margin-top:18px}
@@ -301,10 +303,10 @@ tbody tr:last-child>*{border-bottom:0}
 .figure{aspect-ratio:16/9;max-width:100%;background:var(--surface-2);overflow:hidden;position:relative}
 .figure svg{width:100%;height:100%;display:block}
 .figure img{width:100%;height:100%;object-fit:cover;display:block}
-.figure figcaption{position:absolute;left:12px;bottom:10px;font-size:.72rem;letter-spacing:.06em;color:#19375B;background:rgba(247,245,240,.8);padding:3px 8px}
+.figure figcaption{position:absolute;left:12px;bottom:10px;font-size:.72rem;letter-spacing:.06em;color:#19375B;background:rgba(239,235,224,.8);padding:3px 8px}
 
 /* Valores */
-/* Historia de El Ángel */
+/* Historia del Cementerio del Ángel */
 .timeline{list-style:none;margin:6px 0 0;padding:0 0 0 4px;display:grid;gap:18px;border-left:2px solid var(--salvia)}
 .timeline li{position:relative;padding-left:24px;color:var(--ink-soft)}
 .timeline li::before{content:"";position:absolute;left:-8px;top:.4em;width:10px;height:10px;border-radius:50%;background:var(--bg);border:2px solid var(--celeste)}
@@ -349,10 +351,10 @@ tbody tr:last-child>*{border-bottom:0}
 .faq details p{padding:0 0 16px;color:var(--ink-soft);max-width:70ch}
 
 /* Franja de cierre */
-.cta-band{background:var(--azul);color:#fff}
+.cta-band{background:var(--bg);color:var(--azul)}
 .cta-band .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between;padding-block:40px}
-.cta-band h2{color:#fff}
-.cta-band p{color:#DCE6F0;margin-top:6px}
+.cta-band h2{color:var(--azul)}
+.cta-band p{color:var(--azul);margin-top:6px}
 
 /* Contacto */
 .contact{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px}
@@ -382,7 +384,7 @@ form.quote .check input{width:auto;margin-top:4px}
 @media (max-width:560px){form.quote{grid-template-columns:1fr;padding:20px}.channels div{grid-template-columns:1fr;gap:2px}}
 
 /* Pie */
-footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.14);color:var(--footer-ink);padding-block:56px 110px;font-size:.92rem}
+footer.site{background:var(--footer-bg);border-top:1px solid rgba(239,235,224,.14);color:var(--footer-ink);padding-block:56px 110px;font-size:.92rem}
 .fcols{display:grid;grid-template-columns:1.4fr repeat(4,minmax(0,1fr));gap:32px}
 .fcols h4{font-family:var(--display);font-weight:500;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;margin:0 0 12px;color:var(--celeste)}
 .fcols ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
@@ -392,7 +394,7 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
 .fbrand p{color:var(--footer-soft);margin-top:14px;max-width:34ch}
 .fbrand .brand{color:var(--footer-ink)}
 .fbrand .logo{width:150px}
-.fbrand .logo::after{background:#FFFFFF}
+.fbrand .logo::after{background:#EFEBE0}
 .fbrand .brand .sub{border-left-color:rgba(232,226,215,.3)}
 .fbrand .brand .sub{color:var(--footer-soft)}
 .legalrow{margin-top:44px;padding-top:20px;border-top:1px solid rgba(232,226,215,.2);display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between;align-items:center}
@@ -402,14 +404,71 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
 @media (max-width:900px){.fcols{grid-template-columns:repeat(2,minmax(0,1fr))}.fbrand{grid-column:1/-1}}
 
 /* Barra fija de contacto */
-.dock{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:1fr 1fr;padding-bottom:env(safe-area-inset-bottom,0px);background:var(--azul);box-shadow:0 -6px 20px rgba(0,0,0,.12)}
-.dock a{display:flex;align-items:center;justify-content:center;gap:10px;padding:15px 10px;color:#fff;text-decoration:none;font-family:var(--display);text-transform:uppercase;letter-spacing:.12em;font-size:.8rem}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:1fr 1fr;padding-bottom:env(safe-area-inset-bottom,0px);background:var(--verde-osc);box-shadow:0 -6px 20px rgba(0,0,0,.12)}
+.dock a{display:flex;align-items:center;justify-content:center;gap:10px;padding:15px 10px;color:#EFEBE0;text-decoration:none;font-family:var(--display);text-transform:uppercase;letter-spacing:.12em;font-size:.8rem}
 .dock a+a{background:var(--cta);color:var(--cta-ink)}
 .dock svg{width:18px;height:18px}
 @media (min-width:900px){
   .dock{left:auto;right:24px;bottom:24px;grid-template-columns:auto auto;box-shadow:0 10px 30px rgba(0,0,0,.18)}
   .dock a{padding:13px 20px}
 }
+
+/* ===== Ajustes de la revisión del 12-oct-2026 ===== */
+body{font-size:16px}
+h1,h2,h3{letter-spacing:.03em;font-weight:400}
+nav.main ul{gap:13px}
+nav.main a{letter-spacing:.04em;font-size:.68rem}
+.eyebrow,.access .k,.sidenav p,.spec dt,.facts dt,.channels dt,.fcols h4{letter-spacing:.12em}
+.btn{letter-spacing:.08em;font-size:.74rem}
+.btn,.online>button,.theme-toggle,.burger{border-radius:999px}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{border:1.5px solid var(--heading);color:var(--heading);background:transparent}
+.btn.ghost:hover{background:var(--heading);color:var(--bg);filter:none}
+/* sobre fondos verdes (topbar, secciones alternas, franja de contacto) el botón de apoyo va en azul para que se distinga */
+section.alt .btn.bronze,.cta-band .btn.bronze,.topbar .online>button{background:var(--azul);color:#EFEBE0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) section.alt .btn.bronze{background:var(--celeste);color:var(--azul)}}
+:root[data-theme="dark"] section.alt .btn.bronze{background:var(--celeste);color:var(--azul)}
+.btn.bronze{background:var(--celeste);color:var(--azul)}
+.online .menu{border-radius:18px;overflow:hidden}
+.access .grid{gap:16px}
+.access .grid a,.card,.box,.panel,.role,.sent,.map,.ficha .img,.figure,.tablewrap,.article .thumb,form.quote,.bform{border-radius:22px}
+.card{overflow:hidden}
+.seg span{border-radius:999px}
+form.quote input,form.quote select,form.quote textarea,.bform input{border-radius:14px}
+.steps li::before{width:44px;height:44px;border:1.5px solid var(--detail);border-radius:50%;display:grid;place-items:center;font-size:1.15rem;font-weight:500}
+/* botón flotante de contacto: una sola píldora con extremos curvos y división curva entre Llamar y WhatsApp */
+.dock{background:var(--azul);border-radius:999px;overflow:hidden;gap:0;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));padding-bottom:0;box-shadow:0 10px 26px rgba(0,0,0,.2)}
+.dock a{border-radius:0}
+.dock a+a{background:var(--celeste);color:var(--azul);position:relative}
+.dock a+a::before{content:"";position:absolute;top:0;bottom:0;left:-9px;width:18px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 50' preserveAspectRatio='none'%3E%3Crect width='18' height='50' fill='%2319375B'/%3E%3Cpath d='M18 0H13C2 6 2 18 9 25S16 44 5 50H18Z' fill='%236CAADA'/%3E%3C/svg%3E") no-repeat;background-size:100% 100%}
+@media (min-width:900px){.dock{left:auto;right:24px;bottom:24px;grid-template-columns:1fr 1fr}.dock a{padding:13px 24px}}
+.sidenav a{border-radius:12px}
+.box h4{font-family:var(--display);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--detail);margin:18px 0 8px;font-weight:600}
+.box + .box{margin-top:20px}
+.channels dd a{color:var(--link)}
+.bform{background:var(--surface);border:1px solid var(--line);padding:26px;display:grid;gap:16px;grid-template-columns:1fr 1fr;margin-top:18px}
+.bform .full{grid-column:1/-1}
+.bform label{display:grid;gap:6px;font-size:.9rem;font-weight:600}
+.bform input{font:inherit;font-weight:400;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:11px 12px;width:100%}
+.bform .callrow{margin-top:0}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.placa{border:2px dashed var(--detail);border-radius:22px;padding:22px;color:var(--ink-soft)}
+.placa strong{display:block;color:var(--ink)}
+.esculturas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.esculturas img,.gallery.g3 img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;display:block}
+.gallery.g3{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.gallery.g3 figure{margin:0}
+.planoimg{display:block;max-width:420px;border-radius:22px;border:1px solid var(--line);overflow:hidden;background:#EFEBE0}
+.planoimg img{display:block;width:100%;height:auto}
+.ficha .img img.top{object-position:50% 32%}
+.figure:has(img.pos-team){aspect-ratio:4/3}
+.figure img.pos-team{object-position:50% 82%}
+.figure img.pos-capilla{object-position:50% 30%}
+.topbar .wrap{font-size:.84rem;white-space:nowrap}
+@media (max-width:900px){.topbar .msg{display:none}.topbar .wrap{justify-content:center}}
+@media (max-width:640px){.topbar .nums span:last-child{display:none}.topbar .nums{gap:0}}
+@media (max-width:480px){.topbar .nums{display:none}.brand .sub{display:none}}
+@media (max-width:760px){.bform,.gallery,.esculturas,.gallery.g3{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -453,7 +512,7 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
     <symbol id="pabellon" viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice">
       <rect width="800" height="450" fill="#E8E2D7"/>
       <rect y="330" width="800" height="120" fill="#D6CDBB"/>
-      <g fill="#F7F5F0" stroke="#C5B9A2" stroke-width="2"><rect x="90" y="130" width="620" height="200"/><rect x="72" y="112" width="656" height="20"/></g>
+      <g fill="#EFEBE0" stroke="#C5B9A2" stroke-width="2"><rect x="90" y="130" width="620" height="200"/><rect x="72" y="112" width="656" height="20"/></g>
       <g fill="#BFB29A"><path d="M120 330V230a28 28 0 0 1 56 0v100z"/><path d="M206 330V230a28 28 0 0 1 56 0v100z"/><path d="M292 330V230a28 28 0 0 1 56 0v100z"/><path d="M452 330V230a28 28 0 0 1 56 0v100z"/><path d="M538 330V230a28 28 0 0 1 56 0v100z"/><path d="M624 330V230a28 28 0 0 1 56 0v100z"/></g>
       <path d="M372 330V200a28 28 0 0 1 56 0v130z" fill="#19375B" opacity=".85"/>
       <path d="M-30 70c110-50 210-30 230 30-80 30-180 40-230 30z" fill="#234A42"/>
@@ -462,10 +521,10 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
       <path d="M360 450l24-120h32l24 120z" fill="#EDE6D8"/>
     </symbol>
 
-    <symbol id="img-nicho" viewBox="0 0 400 300"><rect width="400" height="300" fill="#E8E2D7"/><g fill="none" stroke="#6BABD9" stroke-width="2"><rect x="110" y="60" width="180" height="200"/><path d="M110 110h180M110 160h180M110 210h180M170 60v200M230 60v200"/></g><rect x="176" y="116" width="48" height="38" fill="#19375B" opacity=".85"/></symbol>
-    <symbol id="img-tumba" viewBox="0 0 400 300"><rect width="400" height="300" fill="#E8E2D7"/><path d="M0 230h400v70H0z" fill="#D5CCBB"/><g fill="none" stroke="#6BABD9" stroke-width="2"><rect x="90" y="170" width="220" height="60"/><path d="M110 170v-30h180v30"/></g><path d="M130 150h140" stroke="#19375B" stroke-width="3"/></symbol>
-    <symbol id="img-mausoleo" viewBox="0 0 400 300"><rect width="400" height="300" fill="#E8E2D7"/><path d="M0 250h400v50H0z" fill="#D5CCBB"/><g fill="none" stroke="#6BABD9" stroke-width="2"><path d="M130 250V130l70-50 70 50v120z"/><path d="M180 250v-60a20 20 0 0 1 40 0v60"/></g><path d="M200 80v-22" stroke="#19375B" stroke-width="3"/></symbol>
-    <symbol id="img-columbario" viewBox="0 0 400 300"><rect width="400" height="300" fill="#E8E2D7"/><g fill="none" stroke="#6BABD9" stroke-width="2"><rect x="100" y="80" width="200" height="160"/><path d="M100 133h200M100 186h200M150 80v160M200 80v160M250 80v160"/></g><g fill="#19375B" opacity=".85"><circle cx="175" cy="107" r="10"/><circle cx="225" cy="160" r="10"/></g></symbol>
+    <symbol id="img-nicho" viewBox="0 0 400 300"><rect width="400" height="300" fill="#E8E2D7"/><g fill="none" stroke="#6CAADA" stroke-width="2"><rect x="110" y="60" width="180" height="200"/><path d="M110 110h180M110 160h180M110 210h180M170 60v200M230 60v200"/></g><rect x="176" y="116" width="48" height="38" fill="#19375B" opacity=".85"/></symbol>
+    <symbol id="img-tumba" viewBox="0 0 400 300"><rect width="400" height="300" fill="#E8E2D7"/><path d="M0 230h400v70H0z" fill="#D5CCBB"/><g fill="none" stroke="#6CAADA" stroke-width="2"><rect x="90" y="170" width="220" height="60"/><path d="M110 170v-30h180v30"/></g><path d="M130 150h140" stroke="#19375B" stroke-width="3"/></symbol>
+    <symbol id="img-mausoleo" viewBox="0 0 400 300"><rect width="400" height="300" fill="#E8E2D7"/><path d="M0 250h400v50H0z" fill="#D5CCBB"/><g fill="none" stroke="#6CAADA" stroke-width="2"><path d="M130 250V130l70-50 70 50v120z"/><path d="M180 250v-60a20 20 0 0 1 40 0v60"/></g><path d="M200 80v-22" stroke="#19375B" stroke-width="3"/></symbol>
+    <symbol id="img-columbario" viewBox="0 0 400 300"><rect width="400" height="300" fill="#E8E2D7"/><g fill="none" stroke="#6CAADA" stroke-width="2"><rect x="100" y="80" width="200" height="160"/><path d="M100 133h200M100 186h200M150 80v160M200 80v160M250 80v160"/></g><g fill="#19375B" opacity=".85"><circle cx="175" cy="107" r="10"/><circle cx="225" cy="160" r="10"/></g></symbol>
 
     <symbol id="logo" viewBox="0 0 40 40">
       <path d="M6 36V17a14 14 0 0 1 28 0v19" fill="none" stroke="currentColor" stroke-width="1.6"/>
@@ -482,18 +541,18 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
 
 <div class="topbar" role="note">
   <div class="wrap">
-    <span class="msg"><span class="dot" aria-hidden="true"></span><strong>¿Necesita atención ahora?</strong> Le respondemos por teléfono o WhatsApp.</span>
-    <span class="tools"><span class="nums"><span>Tel. (01) 000-0000</span><span>WhatsApp +51 900 000 000</span></span>
+    <span class="msg"><span class="dot" aria-hidden="true"></span><strong>¿Necesita atención ahora?</strong></span>
+    <span class="tools"><span class="nums"><span>Mesa de partes +51 912 610 585</span><span>Comercial +51 977 527 234</span></span>
       <div class="online">
       <button type="button" id="onlineBtn" aria-expanded="false" aria-controls="onlineMenu">Servicios en línea</button>
       <div class="menu" id="onlineMenu" hidden>
         <a href="#contacto">Solicitar cotización</a>
-        <a href="#documentos">Requisitos y documentos</a>
+        <a href="#documentos">Trámites y requisitos</a>
+        <a href="#busquedas">Búsqueda virtual</a>
         <a href="#preguntas">Preguntas frecuentes</a>
         <hr>
         <div class="soon">Área privada del cliente <em>Próximamente</em></div>
         <div class="soon">Pagos en línea <em>Próximamente</em></div>
-        <div class="soon">Buscador de ubicación <em>Próximamente</em></div>
         <div class="soon">Agenda de citas y visitas <em>Próximamente</em></div>
       </div>
     </div>
@@ -503,17 +562,16 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
 
 <header class="site">
   <div class="wrap head">
-    <a class="brand" href="#inicio" aria-label="Serenity El Ángel, inicio">
+    <a class="brand" href="#inicio" aria-label="Serenity Cementerio del Ángel, inicio">
       <span class="logo" role="img" aria-label="Serenity"></span>
-      <span class="sub">El Ángel<br>Servicios memoriales</span>
+      <span class="sub">Cementerio del Ángel<br>Servicios memoriales</span>
     </a>
     <nav class="main" id="menu" aria-label="Principal">
       <ul>
-        <li><a href="#tramites">Trámites</a></li>
-        <li><a href="#planificar">Planificar</a></li>
-        <li><a href="#soluciones">Soluciones</a></li>
-        <li><a href="#el-angel">El Ángel</a></li>
-        <li><a href="#renovacion">Renovación</a></li>
+        <li><a href="#tramites">Mesa de partes</a></li>
+        <li><a href="#planificar">Planes y servicios</a></li>
+        <li><a href="#el-angel">Cementerio del Ángel</a></li>
+        <li><a href="#renovacion">Proyectos</a></li>
         <li><a href="#orientacion">Orientación</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#contacto">Contacto</a></li>
@@ -533,17 +591,11 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
 <div class="page" id="inicio" data-page="inicio" data-title="Inicio">
   <section class="hero" aria-label="Presentación">
     <div class="slides" id="slides">
-      <figure class="slide on"><img src="img/hero-4.jpg" alt="Recorrido entre mausoleos y pabellones del Cementerio El Ángel" fetchpriority="high"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure>
-      <figure class="slide"><img src="img/equipo.jpg" alt="Equipo de SERENITY frente a la portada del Cementerio El Ángel" loading="lazy"><figcaption>Equipo SERENITY en la portada de El Ángel</figcaption></figure>
+      <figure class="slide on"><img src="img/foto-columbarios.jpg" alt="Jardín y muro de columbarios del Cementerio del Ángel" fetchpriority="high"><figcaption>Foto: archivo SERENITY</figcaption></figure>
     </div>
-    <div class="dots" id="dots" role="group" aria-label="Elegir imagen">
-      <button type="button" aria-label="Imagen 1" aria-current="true"></button>
-      <button type="button" aria-label="Imagen 2"></button>
-    </div>
-    <div class="wrap">
-      <p class="eyebrow">SERENITY · Cementerio El Ángel</p>
+        <div class="wrap">
+      <p class="eyebrow">SERENITY · Cementerio del Ángel</p>
       <h1>Gestión moderna al servicio de la memoria</h1>
-      <p>Somos la empresa que administra y moderniza el Cementerio El Ángel. Con orden, transparencia y respeto por su historia, acompañamos a las familias de Lima.</p>
       <div class="callrow"><a class="btn bronze" href="#nosotros">Conozca SERENITY</a><a class="btn light" href="#tramites">Necesito atención ahora</a></div>
     </div>
   </section>
@@ -553,23 +605,21 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
       <div class="two" style="gap:48px;align-items:center">
         <div class="stack">
           <p class="eyebrow">Quiénes somos</p>
-          <h2>Una nueva forma de gestionar El Ángel</h2>
-          <p class="lede">SERENITY nació para recuperar y modernizar la operación de uno de los cementerios más emblemáticos de Lima.</p>
-          <p>No buscamos crear un cementerio nuevo, sino transformar uno existente con criterios empresariales: recuperar la confianza, invertir según la demanda real y construir una operación sostenible de largo plazo.</p>
-          <p><strong>Nuestra visión:</strong> ser un referente de gestión moderna de cementerios urbanos en el Perú.</p>
+          <h2>Una nueva forma de gestionar el Cementerio del Ángel</h2>
+          <p class="lede">Gestión moderna, transparente y respetuosa de la historia.</p>
           <div class="callrow"><a class="btn primary" href="#historia-serenity">Nuestra historia</a><a class="btn ghost" href="#mision">Misión y visión</a></div>
         </div>
-        <div class="figure"><img src="img/equipo.jpg" alt="Equipo de SERENITY frente a la portada del Cementerio El Ángel" loading="lazy"><figcaption>Equipo SERENITY en la portada de El Ángel</figcaption></div>
+        <div class="figure"><img class="pos-team" src="img/equipo-1.jpg" alt="Equipo de SERENITY junto al monumento del Ángel de la Resurrección" loading="lazy"><figcaption>Equipo SERENITY junto al Ángel de la Resurrección</figcaption></div>
       </div>
       <div class="values">
-        <div><h3>Respeto</h3><p>Por cada persona, cada familia y cada creencia.</p></div>
-        <div><h3>Claridad</h3><p>La misma información y precio en la web, por teléfono y en persona.</p></div>
-        <div><h3>Mejora continua</h3><p>Recuperamos espacios de forma progresiva y verificable.</p></div>
-        <div><h3>Sostenibilidad</h3><p>Una operación sana que permite reinvertir en El Ángel.</p></div>
+        <div><h3>Respeto</h3></div>
+        <div><h3>Claridad</h3></div>
+        <div><h3>Mejora continua</h3></div>
+        <div><h3>Sostenibilidad</h3></div>
       </div>
       <p class="role">
       <svg aria-hidden="true"><use href="#i-info"/></svg>
-      <span><strong>Nuestro rol:</strong> SERENITY opera y administra los servicios del Cementerio El Ángel en el marco del contrato suscrito con la Sociedad de Beneficencia de Lima Metropolitana. SERENITY no es propietaria del cementerio. <a href="#beneficencia">Conozca la relación contractual</a>.</span>
+      <span>SERENITY opera los servicios del Cementerio del Ángel por contrato con la Beneficencia de Lima. No es su propietaria. <a href="#beneficencia">Ver relación contractual</a></span>
     </p>
     </div>
   </section>
@@ -578,27 +628,24 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
     <div class="wrap">
       <div class="head-row">
         <div><p class="eyebrow">Atención a familias</p><h2>¿Cómo podemos ayudarle?</h2></div>
-        <p class="lede">Le orientamos con claridad, ya sea que necesite atención hoy o quiera planificar con tiempo.</p>
+        
       </div>
       <div class="access">
     <div class="grid">
       <a class="urgent" href="#tramites">
         <span class="k">Necesidad inmediata</span>
         <span class="t">Necesito atención</span>
-        <span class="d">Le decimos qué alternativa está disponible, qué documentos necesita y cuánto demora.</span>
         <span class="go">Ver los pasos</span>
       </a>
       <a href="#planificar">
         <span class="k">Previsión</span>
         <span class="t">Quiero planificar</span>
-        <span class="d">Compare alternativas con tiempo y elija una forma de pago que se ajuste a su familia.</span>
         <span class="go">Planificación anticipada</span>
       </a>
-      <a href="#soluciones">
-        <span class="k">Catálogo</span>
-        <span class="t">Quiero conocer las alternativas</span>
-        <span class="d">Nichos, tumbas, mausoleos, columbarios y cinerarios, explicados de forma sencilla.</span>
-        <span class="go">Soluciones memoriales</span>
+      <a href="#servicios">
+        <span class="k">Servicios</span>
+        <span class="t">Quiero conocer los servicios</span>
+        <span class="go">Ver servicios</span>
       </a>
     </div>
       </div>
@@ -608,14 +655,13 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
   <section class="block">
     <div class="wrap">
       <div class="head-row">
-        <div><p class="eyebrow">Soluciones memoriales</p><h2>Alternativas para cada familia</h2></div>
-        <p class="lede">Opciones individuales, compartidas y familiares, con distintos presupuestos.</p>
+        <div><p class="eyebrow">Servicios</p><h2>Nuestros servicios</h2></div>
       </div>
       <div class="cards">
-        <a class="card" href="#nichos"><div class="img"><img src="img/nichos.jpg" alt="Pabellón de nichos en El Ángel" loading="lazy"></div><div class="body"><h3>Nichos</h3><p class="for">Solución individual y accesible.</p><div class="foot"><span class="pill ok">Según disponibilidad</span><span class="go">Ver ficha</span></div></div></a>
-        <a class="card" href="#tumbas"><div class="img"><img src="img/hero-2.jpg" alt="Tumbas y mausoleos en una calle de El Ángel" loading="lazy"></div><div class="body"><h3>Tumbas familiares</h3><p class="for">Un espacio exclusivo para varias personas.</p><div class="foot"><span class="pill ok">Según disponibilidad</span><span class="go">Ver ficha</span></div></div></a>
-        <a class="card" href="#mausoleos"><div class="img"><img src="img/hero-4.jpg" alt="Mausoleos y pabellones de El Ángel" loading="lazy"></div><div class="body"><h3>Mausoleos</h3><p class="for">Arquitectura propia y duradera.</p><div class="foot"><span class="pill ok">Según disponibilidad</span><span class="go">Ver ficha</span></div></div></a>
-        <a class="card" href="#columbarios"><div class="img"><img src="img/pabellon.jpg" alt="Pabellones de El Ángel" loading="lazy"></div><div class="body"><h3>Columbarios y cinerarios</h3><p class="for">Para conservar las cenizas.</p><div class="foot"><span class="pill ok">Según disponibilidad</span><span class="go">Ver ficha</span></div></div></a>
+        <a class="card" href="#nichos"><div class="img"><img src="img/foto-nichos.jpg" alt="Pabellón de nichos del Cementerio del Ángel" loading="lazy"></div><div class="body"><h3>Nichos</h3><div class="foot"><span class="pill ok">1 persona</span><span class="go">Ver</span></div></div></a>
+        <a class="card" href="#mausoleo-tumba"><div class="img"><img src="img/foto-tumba.jpg" alt="Tumba con nichos y jardín en el Cementerio del Ángel" loading="lazy"></div><div class="body"><h3>Mausoleo tumba</h3><div class="foot"><span class="pill ok">2 a 6 personas</span><span class="go">Ver</span></div></div></a>
+        <a class="card" href="#mausoleo-capilla"><div class="img"><img src="img/foto-capilla.jpg" alt="Capilla del Cementerio del Ángel" loading="lazy" style="object-position:50% 64%"></div><div class="body"><h3>Mausoleo capilla</h3><div class="foot"><span class="pill ok">6 a 16 personas</span><span class="go">Ver</span></div></div></a>
+        <a class="card" href="#columbarios"><div class="img"><img src="img/foto-columbarios.jpg" alt="Muro de columbarios del Cementerio del Ángel" loading="lazy"></div><div class="body"><h3>Columbarios</h3><div class="foot"><span class="pill ok">1 a 2 urnas</span><span class="go">Ver</span></div></div></a>
       </div>
     </div>
   </section>
@@ -626,123 +672,99 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
   <section class="block alt">
     <div class="wrap two">
       <div>
-        <div class="figure"><img src="img/oratorio.jpg" alt="Oratorio del Cementerio El Ángel" loading="lazy"><figcaption>Foto: Juan Lozada · CC BY-SA 3.0 · Wikimedia Commons</figcaption></div>
+        <div class="figure"><img class="pos-capilla" src="img/foto-capilla.jpg" alt="Capilla del Cementerio del Ángel" loading="lazy"><figcaption>Foto: archivo SERENITY</figcaption></div>
       </div>
       <div class="stack" style="align-self:center">
-        <p class="eyebrow">Cementerio El Ángel</p>
+        <p class="eyebrow">Cementerio del Ángel</p>
         <h2>Memoria viva de Lima</h2>
-        <p class="lede">Fundado en 1959, El Ángel guarda la memoria de figuras como Chabuca Granda, Lucha Reyes y José María Arguedas. Es patrimonio arquitectónico y cultural de Lima, y hoy se recupera paso a paso.</p>
-        <div class="callrow"><a class="btn primary" href="#el-angel">Conocer El Ángel</a><a class="btn ghost" href="#renovacion">Ver la renovación</a></div>
+        <p class="lede">Desde 1959. Patrimonio cultural de Lima.</p>
+        <div class="callrow"><a class="btn primary" href="#el-angel">Conocer el cementerio</a><a class="btn ghost" href="#renovacion">Ver proyectos</a></div>
       </div>
     </div>
   </section>
 
   <section class="cta-band">
     <div class="wrap">
-      <div><h2>Hable con una persona</h2><p>Teléfono (01) 000-0000 · WhatsApp +51 900 000 000</p></div>
+      <div><h2>Hable con una persona</h2><p>Mesa de partes +51 912 610 585 · Comercial +51 977 527 234</p></div>
       <a class="btn bronze" href="#contacto">Contacto y cotización</a>
     </div>
   </section>
 </div>
 
-<!-- =================== SOLUCIONES =================== -->
-<div class="page" id="soluciones" data-page="soluciones" data-title="Soluciones memoriales" hidden>
-  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/nichos.jpg" alt="Pabellón de nichos del Cementerio El Ángel" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/hero-4.jpg" alt="Recorrido entre mausoleos y pabellones" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/pabellon.jpg" alt="Pabellones del Cementerio El Ángel" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Soluciones memoriales</p><h1>Alternativas dignas y claras</h1><p>Fichas sencillas para comparar y pedir información. La disponibilidad y el precio se confirman con un asesor.</p></div></section>
-  <nav class="crumbs" aria-label="Ruta"><div class="wrap"><ol><li><a href="#inicio">Inicio</a></li><li aria-current="page">Soluciones memoriales</li></ol></div></nav>
-  <div class="wrap sidecols">
-    <nav class="sidenav" aria-label="En esta página"><p>En esta página</p><a href="#nichos">Nichos</a><a href="#tumbas">Tumbas y soluciones familiares</a><a href="#mausoleos">Mausoleos</a><a href="#columbarios">Columbarios y cinerarios</a><a href="#comparar">Comparar alternativas</a></nav>
-    <div class="content">
-      <section id="nichos" class="ficha">
-        <div class="img"><img src="img/nichos.jpg" alt="Pabellón de nichos en El Ángel" loading="lazy"></div>
-        <div>
-          <h2>Nichos</h2>
-          <p class="muted">Una solución individual, ubicada en los pabellones del cementerio, con derecho de inhumación.</p>
-          <dl class="spec"><div><dt>Para quién</dt><dd>Familias que buscan una alternativa accesible</dd></div><div><dt>Capacidad</dt><dd>Una persona</dd></div><div><dt>Condiciones</dt><dd>Según disponibilidad y contrato vigente</dd></div><div><dt>Estado</dt><dd><span class="pill ok">Disponible según stock</span></dd></div></dl>
-          <div class="callrow"><a class="btn primary" href="#contacto">Solicitar información</a></div>
-        </div>
-      </section>
-      <section id="tumbas" class="ficha">
-        <div class="img"><img src="img/hero-2.jpg" alt="Tumbas y mausoleos en una calle de El Ángel" loading="lazy"></div>
-        <div>
-          <h2>Tumbas y soluciones familiares</h2>
-          <p class="muted">Un espacio exclusivo para la familia, que puede compartirse entre varias personas.</p>
-          <dl class="spec"><div><dt>Para quién</dt><dd>Familias que desean permanecer juntas</dd></div><div><dt>Capacidad</dt><dd>Varias personas, según el diseño</dd></div><div><dt>Condiciones</dt><dd>Según disponibilidad y contrato vigente</dd></div><div><dt>Estado</dt><dd><span class="pill ok">Disponible según stock</span></dd></div></dl>
-          <div class="callrow"><a class="btn primary" href="#contacto">Solicitar información</a></div>
-        </div>
-      </section>
-      <section id="mausoleos" class="ficha">
-        <div class="img"><img src="img/hero-4.jpg" alt="Mausoleos y pabellones de El Ángel" loading="lazy"></div>
-        <div>
-          <h2>Mausoleos y mausoleos tipo capilla</h2>
-          <p class="muted">Una construcción propia, de arquitectura duradera, para una familia o institución.</p>
-          <dl class="spec"><div><dt>Para quién</dt><dd>Familias extensas e instituciones</dd></div><div><dt>Capacidad</dt><dd>Varias personas, según el proyecto</dd></div><div><dt>Condiciones</dt><dd>Sujeto a disponibilidad y aprobaciones</dd></div><div><dt>Estado</dt><dd><span class="pill ok">Disponible según stock</span></dd></div></dl>
-          <div class="callrow"><a class="btn primary" href="#contacto">Solicitar información</a></div>
-        </div>
-      </section>
-      <section id="columbarios" class="ficha">
-        <div class="img"><img src="img/pabellon.jpg" alt="Pabellones de El Ángel" loading="lazy"></div>
-        <div>
-          <h2>Columbarios y cinerarios</h2>
-          <p class="muted">Espacios para conservar urnas con cenizas, de forma individual o familiar.</p>
-          <dl class="spec"><div><dt>Para quién</dt><dd>Familias que eligieron la cremación</dd></div><div><dt>Capacidad</dt><dd>Una o varias urnas</dd></div><div><dt>Condiciones</dt><dd>Según disponibilidad y contrato vigente</dd></div><div><dt>Estado</dt><dd><span class="pill ok">Disponible según stock</span></dd></div></dl>
-          <div class="callrow"><a class="btn primary" href="#contacto">Solicitar información</a></div>
-        </div>
-      </section>
-      <section id="comparar">
-        <h2>Comparar alternativas</h2>
-        <div class="tablewrap">
-          <table>
-            <thead><tr><th scope="col">Alternativa</th><th scope="col">Tipo</th><th scope="col">Capacidad</th><th scope="col">Ideal para</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">Nicho</th><td>Individual</td><td>1 persona</td><td>Una solución accesible</td></tr>
-              <tr><th scope="row">Tumba familiar</th><td>Familiar</td><td>Varias personas</td><td>Familias que desean permanecer juntas</td></tr>
-              <tr><th scope="row">Mausoleo</th><td>Familiar o institucional</td><td>Varias personas</td><td>Un espacio propio y duradero</td></tr>
-              <tr><th scope="row">Columbario / cinerario</th><td>Individual o familiar</td><td>1 o más urnas</td><td>Cremación</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="note">Cada alternativa se publica solo después de validar disponibilidad, precio, permisos y condiciones comerciales.</p>
-      </section>
-    </div>
-  </div>
-</div>
-
 <!-- =================== SERVICIOS Y TRÁMITES =================== -->
-<div class="page" id="tramites" data-page="tramites" data-title="Servicios y trámites" hidden>
-  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/cuidadores.jpg" alt="Personal cuidando un pabellón del Cementerio El Ángel" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/plaza.jpg" alt="Explanada de ingreso al Cementerio El Ángel" loading="lazy"><figcaption>Foto: Fmurillo26 · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/hero-3.jpg" alt="Entrada al Cementerio El Ángel" loading="lazy"><figcaption>Foto: Juan Lozada · CC BY-SA 3.0 · Wikimedia Commons</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Servicios y trámites</p><h1>Si necesita resolver hoy</h1><p>Un asesor le acompaña desde la primera llamada hasta la coordinación del servicio dentro del cementerio.</p></div></section>
-  <nav class="crumbs" aria-label="Ruta"><div class="wrap"><ol><li><a href="#inicio">Inicio</a></li><li aria-current="page">Servicios y trámites</li></ol></div></nav>
+<div class="page" id="tramites" data-page="tramites" data-title="Mesa de partes y trámites" hidden>
+  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/cuidadores.jpg" alt="Personal cuidando un pabellón del Cementerio del Ángel" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/plaza.jpg" alt="Explanada de ingreso al Cementerio del Ángel" loading="lazy"><figcaption>Foto: Fmurillo26 · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/hero-3.jpg" alt="Entrada al Cementerio del Ángel" loading="lazy"><figcaption>Foto: Juan Lozada · CC BY-SA 3.0 · Wikimedia Commons</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Mesa de partes</p><h1>Si necesita resolver hoy</h1><p>Un asesor le acompaña desde la primera llamada hasta la coordinación del servicio dentro del cementerio.</p></div></section>
+  <nav class="crumbs" aria-label="Ruta"><div class="wrap"><ol><li><a href="#inicio">Inicio</a></li><li aria-current="page">Mesa de partes y trámites</li></ol></div></nav>
   <div class="wrap sidecols">
-    <nav class="sidenav" aria-label="En esta página"><p>En esta página</p><a href="#pasos">Pasos a seguir</a><a href="#documentos">Documentos</a><a href="#orientacion-tramites">Orientación y coordinación</a><a href="#preguntas">Preguntas frecuentes</a></nav>
+    <nav class="sidenav" aria-label="En esta página"><p>En esta página</p><a href="#pasos">Pasos a seguir</a><a href="#documentos">Trámites y requisitos</a><a href="#busquedas">Búsqueda virtual</a><a href="#orientacion-tramites">Orientación y coordinación</a><a href="#preguntas">Preguntas frecuentes</a></nav>
     <div class="content">
       <section id="pasos">
         <h2>Pasos a seguir</h2>
         <ol class="steps">
-          <li><div><h3>Llámenos o escríbanos</h3><p>Por teléfono o WhatsApp. Le confirmamos qué alternativas hay disponibles y el tiempo estimado de atención.</p></div></li>
+          <li><div><h3>Llámenos o escríbanos</h3><p>Mesa de partes: por teléfono, WhatsApp o correo (mesadepartes@serenityasociados.com).</p></div></li>
           <li><div><h3>Reúna los documentos</h3><p>Le indicamos exactamente qué necesita según su caso. Puede enviarlos por WhatsApp o correo para adelantar la revisión.</p></div></li>
           <li><div><h3>Elija la alternativa</h3><p>Revisamos juntos las opciones, las condiciones y el precio, con todo por escrito y sin presión.</p></div></li>
           <li><div><h3>Coordinamos el servicio</h3><p>Programamos la fecha y hora de la inhumación y coordinamos con la funeraria dentro del cementerio.</p></div></li>
         </ol>
         <div class="callrow">
-          <a class="btn primary" href="#contacto"><svg aria-hidden="true"><use href="#i-phone"/></svg>Llamar: (01) 000-0000</a>
-          <a class="btn bronze" href="#contacto"><svg aria-hidden="true"><use href="#i-chat"/></svg>Escribir por WhatsApp</a>
+          <a class="btn primary" href="tel:+51912610585"><svg aria-hidden="true"><use href="#i-phone"/></svg>Llamar: +51 912 610 585</a>
+          <a class="btn bronze" href="https://wa.me/51912610585" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg>Escribir por WhatsApp</a>
         </div>
       </section>
       <section id="documentos">
-        <h2>Documentos</h2>
-        <div class="box">
-          <h3>Los que suelen pedirse</h3>
+        <h2>Trámites y requisitos</h2>
+        <div class="box" id="ornamentos">
+          <h3>Autorizaciones para ornamentos funerarios</h3>
           <ul>
-            <li>DNI de la persona que realiza el trámite</li>
-            <li>Certificado de defunción</li>
-            <li>DNI de la persona fallecida, si está disponible</li>
-            <li>Título o documento del espacio, si la familia ya cuenta con uno</li>
+            <li>Colocación de lápida</li>
+            <li>Colocación de reja</li>
+            <li>Retiro de lápida</li>
+            <li>Retiro de reja</li>
+            <li>Enchape en lápida</li>
+            <li>Empotramiento</li>
+            <li>Mantenimiento o embellecimiento</li>
           </ul>
-          <small>Lista referencial. Un asesor confirmará los requisitos exactos para su caso.</small>
+          <h4>Requisitos</h4>
+          <ul>
+            <li>Mínimo un año desde la inhumación</li>
+            <li>Copia del título de propiedad</li>
+            <li>DNI del solicitante</li>
+            <li>Formato de solicitud</li>
+          </ul>
         </div>
+        <div class="box" id="tramites-documentarios">
+          <h3>Trámites documentarios</h3>
+          <ul>
+            <li>Verificación de datos</li>
+            <li>Duplicado de título de nicho</li>
+            <li>Duplicado de título de tumba, mausoleo y capilla</li>
+            <li>Duplicado de título de parvulario o columbario</li>
+            <li>Constancia de inhumación</li>
+            <li>Duplicado de título de tumba unipersonal, bipersonal o tripersonal (solo titular)</li>
+          </ul>
+          <h4>Requisito</h4>
+          <ul><li>Copia de DNI</li></ul>
+        </div>
+      </section>
+      <section id="busquedas">
+        <h2>Búsqueda virtual</h2>
+        <p class="muted">100 % en línea, sin ir al cementerio. Elija cómo enviarla.</p>
+        <!-- Envío con FormSubmit. Correo de PRUEBA: cambiar por mesadepartes@serenityasociados.com antes de publicar -->
+        <form class="bform" id="bform" action="https://formsubmit.co/alexander.miller.rojas@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Solicitud de búsqueda · web SERENITY"><input type="hidden" name="_template" value="table"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label>Nombre y apellido del solicitante<input name="solicitante" autocomplete="name" required></label>
+          <label>Número de teléfono<input name="telefono" type="tel" autocomplete="tel" required></label>
+          <label>Nombres y apellidos del difunto<input name="difunto" required></label>
+          <label>Fecha de fallecimiento<input name="fecha" type="date" required></label>
+          <div class="full callrow">
+            <button class="btn primary" type="submit">Enviar solicitud</button>
+            <button class="btn bronze" type="button" data-via="whatsapp">Consultar por WhatsApp</button>
+          </div>
+        </form>
       </section>
       <section id="orientacion-tramites">
         <h2>Orientación y coordinación</h2>
-        <div class="figure" style="margin-bottom:24px"><img src="img/plaza.jpg" alt="Explanada de ingreso al Cementerio El Ángel" loading="lazy"><figcaption>Foto: Fmurillo26 · CC BY-SA 4.0 · Wikimedia Commons</figcaption></div>
+        <div class="figure" style="margin-bottom:24px"><img src="img/plaza.jpg" alt="Explanada de ingreso al Cementerio del Ángel" loading="lazy"><figcaption>Foto: Fmurillo26 · CC BY-SA 4.0 · Wikimedia Commons</figcaption></div>
         <div class="benefits">
           <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Ubicación de alternativas</strong>Le mostramos qué espacios están disponibles y dónde se encuentran.</p></div>
           <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Coordinación con la funeraria</strong>Organizamos horarios y accesos dentro del cementerio.</p></div>
@@ -753,44 +775,107 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
       <section id="preguntas" class="faq">
         <h2>Preguntas frecuentes</h2>
         <details><summary>¿Cuánto demora la atención en una necesidad inmediata?</summary><p>Un asesor le responde por teléfono o WhatsApp y le confirma en la misma conversación qué alternativas hay y en qué plazo puede programarse el servicio.</p></details>
-        <details><summary>¿SERENITY es propietaria del Cementerio El Ángel?</summary><p>No. SERENITY opera y administra los servicios del cementerio en el marco del contrato suscrito con la Sociedad de Beneficencia de Lima Metropolitana.</p></details>
-        <details><summary>¿Puedo pagar en cuotas?</summary><p>En la planificación anticipada ofrecemos opciones de financiamiento según la alternativa elegida. Un asesor le explicará las condiciones.</p></details>
+        <details><summary>¿SERENITY es propietaria del Cementerio del Ángel?</summary><p>No. SERENITY opera y administra los servicios del cementerio en el marco del contrato suscrito con la Sociedad de Beneficencia de Lima Metropolitana.</p></details>
+        <details><summary>¿Qué son los planes personalizados?</summary><p>Opciones de pago a su medida para el servicio que elija en la planificación anticipada. Un asesor le explicará las condiciones.</p></details>
         <details><summary>¿Atienden a personas de cualquier creencia?</summary><p>Sí. Atendemos a familias de todas las creencias y respetamos sus costumbres dentro de las normas del cementerio.</p></details>
       </section>
     </div>
   </div>
 </div>
 
-<!-- =================== PLANIFICACIÓN =================== -->
-<div class="page" id="planificar" data-page="planificar" data-title="Planificación anticipada" hidden>
-  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/hero-2.jpg" alt="Calle del Cementerio El Ángel con mausoleos y árboles" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/cielo.jpg" alt="Pabellón del Cementerio El Ángel bajo el cielo de Lima" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/hero-4.jpg" alt="Recorrido entre mausoleos y pabellones" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Planificación anticipada</p><h1>Decidir con tiempo, con calma</h1><p>Planificar evita decisiones apresuradas y deja a su familia con la tranquilidad de saber qué hacer.</p></div></section>
-  <nav class="crumbs" aria-label="Ruta"><div class="wrap"><ol><li><a href="#inicio">Inicio</a></li><li aria-current="page">Planificación anticipada</li></ol></div></nav>
+<!-- =================== PLANIFICACIÓN Y SERVICIOS =================== -->
+<div class="page" id="planificar" data-page="planificar" data-title="Planificación y servicios" hidden>
+  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/foto-nichos.jpg" alt="Pabellón de nichos del Cementerio del Ángel" loading="lazy"><figcaption>Foto: archivo SERENITY</figcaption></figure><figure class="slide"><img src="img/foto-tumba.jpg" alt="Tumba con nichos y jardín" loading="lazy"><figcaption>Foto: archivo SERENITY</figcaption></figure><figure class="slide"><img src="img/foto-columbarios.jpg" alt="Muro de columbarios del Cementerio del Ángel" loading="lazy"><figcaption>Foto: archivo SERENITY</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Planificación y servicios</p><h1>Planes personalizados para cada familia</h1></div></section>
+  <nav class="crumbs" aria-label="Ruta"><div class="wrap"><ol><li><a href="#inicio">Inicio</a></li><li aria-current="page">Planificación y servicios</li></ol></div></nav>
   <div class="wrap sidecols">
-    <nav class="sidenav" aria-label="En esta página"><p>En esta página</p><a href="#beneficios">Beneficios</a><a href="#proceso">Proceso de compra</a><a href="#asesor">Hablar con un asesor</a></nav>
+    <nav class="sidenav" aria-label="En esta página"><p>En esta página</p><a href="#beneficios">Planes personalizados</a><a href="#servicios">Servicios</a><a href="#nichos">Nichos</a><a href="#mausoleo-tumba">Mausoleo tumba</a><a href="#mausoleo-capilla">Mausoleo capilla</a><a href="#columbarios">Columbarios</a><a href="#cremacion">Cremación</a><a href="#exhumaciones">Exhumaciones</a><a href="#traslados">Traslados</a><a href="#proceso">Proceso de compra</a><a href="#asesor">Hablar con un asesor</a></nav>
     <div class="content">
       <section id="beneficios">
-        <h2>Beneficios</h2>
+        <h2>Planes personalizados</h2>
         <div class="benefits">
-          <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Compare sin prisa</strong>Revise alternativas, ubicaciones y condiciones con un asesor.</p></div>
-          <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Pague en cuotas</strong>Opciones de financiamiento según la alternativa elegida.</p></div>
+          <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Compare sin prisa</strong>Revise servicios y ubicaciones con un asesor.</p></div>
+          <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Plan a su medida</strong>Opciones de pago personalizadas según el servicio elegido.</p></div>
           <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Todo por escrito</strong>Precio, condiciones y derechos claros en su contrato.</p></div>
-          <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Para una o varias personas</strong>Soluciones individuales, compartidas o familiares.</p></div>
+          <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Para una o varias personas</strong>Individual, compartido o familiar.</p></div>
+        </div>
+      </section>
+      <section id="servicios"><h2>Servicios</h2></section>
+      <section id="nichos" class="ficha">
+        <div class="img"><img src="img/foto-nichos.jpg" alt="Pabellón de nichos del Cementerio del Ángel" loading="lazy"></div>
+        <div>
+          <h2>Nichos</h2>
+          <p class="muted">Espacio individual ubicado en pabellones.</p>
+          <dl class="spec"><div><dt>Capacidad</dt><dd>1 persona</dd></div><div><dt>Estado</dt><dd><span class="pill ok">Disponible según stock</span></dd></div></dl>
+          <div class="callrow"><a class="btn primary" href="#contacto">Solicitar información</a></div>
+        </div>
+      </section>
+      <section id="mausoleo-tumba" class="ficha">
+        <div class="img"><img src="img/foto-tumba.jpg" alt="Tumba con nichos y jardín en el Cementerio del Ángel" loading="lazy"></div>
+        <div>
+          <h2>Mausoleo tumba</h2>
+          <p class="muted">Un espacio exclusivo para la familia, que puede compartirse entre varias personas.</p>
+          <dl class="spec"><div><dt>Capacidad</dt><dd>2 a 6 personas como máximo</dd></div><div><dt>Estado</dt><dd><span class="pill ok">Disponible según stock</span></dd></div></dl>
+          <div class="callrow"><a class="btn primary" href="#contacto">Solicitar información</a></div>
+        </div>
+      </section>
+      <section id="mausoleo-capilla" class="ficha">
+        <div class="img"><img src="img/foto-capilla.jpg" alt="Capilla del Cementerio del Ángel" loading="lazy" style="object-position:50% 64%"></div>
+        <div>
+          <h2>Mausoleo capilla</h2>
+          <p class="muted">Espacio para familias extensas o instituciones.</p>
+          <dl class="spec"><div><dt>Capacidad</dt><dd>6 a 16 personas</dd></div><div><dt>Estado</dt><dd><span class="pill ok">Sujeto a disponibilidad</span></dd></div></dl>
+          <div class="callrow"><a class="btn primary" href="#contacto">Solicitar información</a></div>
+        </div>
+      </section>
+      <section id="columbarios" class="ficha">
+        <div class="img"><img src="img/foto-columbarios.jpg" alt="Muro de columbarios del Cementerio del Ángel" loading="lazy"></div>
+        <div>
+          <h2>Columbarios</h2>
+          <p class="muted">Espacios para conservar urnas con cenizas.</p>
+          <dl class="spec"><div><dt>Capacidad</dt><dd>1 a 2 urnas</dd></div><div><dt>Estado</dt><dd><span class="pill ok">Disponible según stock</span></dd></div></dl>
+          <div class="callrow"><a class="btn primary" href="#contacto">Solicitar información</a></div>
+        </div>
+      </section>
+      <section id="cremacion" class="ficha">
+        <div class="img"><img src="img/cielo.jpg" alt="Pabellón del Cementerio del Ángel bajo el cielo de Lima" loading="lazy"></div>
+        <div>
+          <h2>Cremación</h2>
+          <p class="muted">Servicio de cremación, con la opción de conservar las cenizas en un columbario.</p>
+          <dl class="spec"><div><dt>Para quién</dt><dd>Familias que eligieron la cremación</dd></div><div><dt>Estado</dt><dd><span class="pill dev">Consulte con un asesor</span></dd></div></dl>
+          <div class="callrow"><a class="btn primary" href="#contacto">Solicitar información</a></div>
+        </div>
+      </section>
+      <section id="exhumaciones" class="ficha">
+        <div class="img"><img src="img/plaza.jpg" alt="Explanada de ingreso al Cementerio del Ángel" loading="lazy"></div>
+        <div>
+          <h2>Exhumaciones</h2>
+          <p class="muted">Gestione la exhumación con nuestra mesa de partes.</p>
+          <dl class="spec"><div><dt>Trámite</dt><dd>Mesa de partes</dd></div><div><dt>Estado</dt><dd><span class="pill ok">Atención con cita</span></dd></div></dl>
+          <div class="callrow"><a class="btn primary" href="#tramites">Ver trámites</a><a class="btn ghost" href="#contacto">Consultar</a></div>
+        </div>
+      </section>
+      <section id="traslados" class="ficha">
+        <div class="img"><img src="img/hero-1.jpg" alt="Pabellón interior del Cementerio del Ángel" loading="lazy"></div>
+        <div>
+          <h2>Traslados internos o externos</h2>
+          <p class="muted">Opción cálida y respetuosa para familias que desean mantener juntos a sus seres queridos en un mismo lugar.</p>
+          <dl class="spec"><div><dt>Tipo</dt><dd>Interno o externo</dd></div><div><dt>Estado</dt><dd><span class="pill ok">Atención con cita</span></dd></div></dl>
+          <div class="callrow"><a class="btn primary" href="#contacto">Solicitar información</a></div>
         </div>
       </section>
       <section id="proceso">
         <h2>Proceso de compra</h2>
-        <div class="figure" style="margin-bottom:8px"><img src="img/hero-2.jpg" alt="Calle arbolada del Cementerio El Ángel" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></div>
         <ol class="steps">
           <li><div><h3>Conversación con un asesor</h3><p>En el cementerio, por teléfono o por videollamada.</p></div></li>
-          <li><div><h3>Propuesta por escrito</h3><p>Alternativas, precios y formas de pago comparables.</p></div></li>
-          <li><div><h3>Visita al espacio</h3><p>Si lo desea, recorre El Ángel y conoce la ubicación.</p></div></li>
-          <li><div><h3>Contrato y forma de pago</h3><p>Firma el contrato y recibe su documentación.</p></div></li>
+          <li><div><h3>Propuesta por escrito</h3><p>Servicios, precios y planes comparables.</p></div></li>
+          <li><div><h3>Visita al espacio</h3><p>Si lo desea, recorre el cementerio y conoce la ubicación.</p></div></li>
+          <li><div><h3>Contrato y plan de pago</h3><p>Firma el contrato y recibe su documentación.</p></div></li>
         </ol>
       </section>
       <section id="asesor">
         <div class="panel">
           <h3>Hablar con un asesor</h3>
-          <p>Sin compromiso. Le explicamos las alternativas y resolvemos sus dudas.</p>
+          <p>Sin compromiso. Contacto comercial: +51 977 527 234</p>
           <a class="btn bronze" href="#contacto">Solicitar una cita</a>
         </div>
       </section>
@@ -799,21 +884,22 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
 </div>
 
 <!-- =================== EL ÁNGEL =================== -->
-<div class="page" id="el-angel" data-page="el-angel" data-title="Cementerio El Ángel" hidden>
-  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/oratorio.jpg" alt="Oratorio del Cementerio El Ángel" loading="lazy"><figcaption>Foto: Juan Lozada · CC BY-SA 3.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/fachada.jpg" alt="Relieve artístico en la fachada del Cementerio El Ángel" loading="lazy"><figcaption>Foto: Saludevi · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/hero-3.jpg" alt="Entrada al Cementerio El Ángel" loading="lazy"><figcaption>Foto: Juan Lozada · CC BY-SA 3.0 · Wikimedia Commons</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Cementerio El Ángel</p><h1>Memoria viva de Lima</h1><p>Historia, patrimonio e información práctica para su visita.</p></div></section>
-  <nav class="crumbs" aria-label="Ruta"><div class="wrap"><ol><li><a href="#inicio">Inicio</a></li><li aria-current="page">Cementerio El Ángel</li></ol></div></nav>
+<div class="page" id="el-angel" data-page="el-angel" data-title="Cementerio del Ángel" hidden>
+  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/foto-aerea.jpg" alt="Vista aérea del Cementerio del Ángel" loading="lazy"><figcaption>Foto: archivo SERENITY</figcaption></figure><figure class="slide"><img src="img/fachada.jpg" alt="Relieve artístico en la fachada del Cementerio del Ángel" loading="lazy"><figcaption>Foto: Saludevi · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/hero-3.jpg" alt="Entrada al Cementerio del Ángel" loading="lazy"><figcaption>Foto: Juan Lozada · CC BY-SA 3.0 · Wikimedia Commons</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Cementerio del Ángel</p><h1>Memoria viva de Lima</h1><p>Historia, patrimonio e información práctica para su visita.</p></div></section>
+  <nav class="crumbs" aria-label="Ruta"><div class="wrap"><ol><li><a href="#inicio">Inicio</a></li><li aria-current="page">Cementerio del Ángel</li></ol></div></nav>
   <div class="wrap sidecols">
-    <nav class="sidenav" aria-label="En esta página"><p>En esta página</p><a href="#historia">Historia</a><a href="#arquitectura">Arquitectura y arte</a><a href="#figuras">Figuras ilustres</a><a href="#memoria-viva">Memoria viva</a><a href="#gestion">Gestión actual</a><a href="#visita">Ubicación y horarios</a><a href="#normas">Normas de visita</a><a href="#renovacion">Mejoras</a></nav>
+    <nav class="sidenav" aria-label="En esta página"><p>En esta página</p><a href="#historia">Historia</a><a href="#patrimonio">Patrimonio</a><a href="#figuras">Figuras ilustres</a><a href="#memoria-viva">Memoria viva</a><a href="#gestion">Gestión actual</a><a href="#visita">Plano y ubicación</a><a href="#normas">Normas de visita</a><a href="#renovacion">Proyectos</a></nav>
     <div class="content">
       <section id="historia" class="stack">
-        <h2>Historia y patrimonio</h2>
-        <p class="lede">Inaugurado en 1959, El Ángel nació para darle a una Lima que crecía sin parar un lugar de descanso digno. Hoy es patrimonio arquitectónico, artístico y popular del Perú.</p>
+        <h2>Historia</h2>
+        <p class="lede">Inaugurado en 1959, el Cementerio del Ángel nació para darle a una Lima que crecía sin parar un lugar de descanso digno. Hoy es patrimonio arquitectónico, artístico y popular del Perú.</p>
         <div class="values">
           <div><h3>1959</h3><p>Año de su inauguración</p></div>
           <div><h3>29 ha</h3><p>De terreno en su diseño original</p></div>
           <div><h3>+640</h3><p>Pabellones a lo largo de sus alamedas</p></div>
           <div><h3>+600 mil</h3><p>Personas descansan aquí</p></div>
         </div>
+        <div class="figure"><img src="img/foto-aerea.jpg" alt="Vista aérea del Cementerio del Ángel" loading="lazy"><figcaption>Foto: archivo SERENITY</figcaption></div>
         <h3>Por qué nació</h3>
         <p>A mediados del siglo XX, la migración del campo a la ciudad multiplicó la población de Lima. Hacia 1955, el Cementerio Presbítero Maestro, abierto en 1808, ya no tenía espacio. La ciudad necesitaba un nuevo cementerio general.</p>
         <ol class="timeline">
@@ -821,12 +907,15 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
           <li><b>27 de junio de 1959 · Inauguración</b>El presidente Manuel Prado inaugura el cementerio, construido bajo la supervisión de la Beneficencia de Lima.</li>
           <li><b>Su nombre</b>Viene del Ángel de la Resurrección, una estatua de mármol de 1877 que se encuentra en la plazoleta frente a la entrada.</li>
         </ol>
+        <div class="placa" id="placa"><strong>Placa inaugural del Cementerio del Ángel</strong>Espacio reservado para la fotografía de la placa (pendiente de entrega por la Beneficencia).</div>
       </section>
-      <section id="arquitectura" class="stack">
-        <h2>Arquitectura y arte</h2>
-        <p>A diferencia del Presbítero Maestro, El Ángel se diseñó con los principios de la arquitectura moderna: calles rectas, alamedas arboladas y pabellones de concreto y mármol con buena luz y ventilación. Su trazado estuvo a cargo de los arquitectos Luis Miró Quesada Garland y Simón Ortiz.</p>
+      <section id="patrimonio" class="stack">
+        <h2>Patrimonio</h2>
+        <p class="eyebrow">Arquitectura e inmuebles</p>
+        <p>A diferencia del Presbítero Maestro, el Cementerio del Ángel se diseñó con los principios de la arquitectura moderna: calles rectas, alamedas arboladas y pabellones de concreto y mármol con buena luz y ventilación. Su trazado estuvo a cargo de los arquitectos Luis Miró Quesada Garland y Simón Ortiz.</p>
         <p>La portada fue elegida en un concurso de 1957 en el que se presentaron 22 propuestas. La ganadora unió el trabajo del pintor Fernando de Szyszlo y el escultor Joaquín Roca Rey.</p>
-        <div class="figure"><img src="img/fachada.jpg" alt="Relieve artístico en la fachada del Cementerio El Ángel" loading="lazy"><figcaption>Foto: Saludevi · CC BY-SA 4.0 · Wikimedia Commons</figcaption></div>
+        <div class="figure"><img src="img/fachada.jpg" alt="Relieve artístico en la fachada del Cementerio del Ángel" loading="lazy"><figcaption>Foto: Saludevi · CC BY-SA 4.0 · Wikimedia Commons</figcaption></div>
+        <div class="esculturas"><img src="img/escultura-1.jpg" alt="Escultura del Cementerio del Ángel" loading="lazy"><img src="img/escultura-2.jpg" alt="Escultura del Cementerio del Ángel" loading="lazy"><img src="img/escultura-3.jpg" alt="Escultura del Cementerio del Ángel" loading="lazy"><img src="img/escultura-4.jpg" alt="Escultura del Cementerio del Ángel" loading="lazy"><img src="img/escultura-6.jpg" alt="Escultura del Cementerio del Ángel" loading="lazy"><img src="img/escultura-8.jpg" alt="Escultura del Cementerio del Ángel" loading="lazy"></div>
         <div class="benefits">
           <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Mural de Szyszlo</strong>Un mosaico abstracto de colores que rompió con la estética sombría de los cementerios antiguos.</p></div>
           <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Los ángeles del juicio</strong>Seis esculturas de bronce de Roca Rey. El ángel central evoca el vuelo de Jorge Chávez sobre los Alpes.</p></div>
@@ -836,7 +925,7 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
       </section>
       <section id="figuras" class="stack">
         <h2>Figuras que descansan aquí</h2>
-        <p class="lede">Si en el Presbítero Maestro descansan los forjadores de la independencia, en El Ángel reposan quienes cantaron, escribieron y construyeron el Perú del siglo XX.</p>
+        <p class="lede">Si en el Presbítero Maestro descansan los forjadores de la independencia, en el Cementerio del Ángel reposan quienes cantaron, escribieron y construyeron el Perú del siglo XX.</p>
         <div class="people">
           <div><h3>Música criolla</h3><ul><li><img class="av" src="img/fig-chabuca.jpg" alt="" width="44" height="44" loading="lazy"><span>Chabuca Granda</span></li><li><img class="av" src="img/fig-lucha-reyes.jpg" alt="" width="44" height="44" loading="lazy"><span>Lucha Reyes <small>· «La Morena de Oro del Perú»</small></span></li><li><img class="av" src="img/fig-varillas.jpg" alt="" width="44" height="44" loading="lazy"><span>Rómulo Varillas <small>· Los Embajadores Criollos</small></span></li></ul></div>
           <div><h3>Música andina y chicha</h3><ul><li><img class="av" src="img/fig-chacalon.jpg" alt="" width="44" height="44" loading="lazy"><span>Lorenzo Palacios <small>· «Chacalón»</small></span></li><li><span class="av" aria-hidden="true">PA</span><span>Víctor Alberto Gil <small>· «Picaflor de los Andes»</small></span></li><li><span class="av" aria-hidden="true">FP</span><span>Leonor Chávez <small>· «Flor Pucarina»</small></span></li></ul></div>
@@ -850,12 +939,18 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
       </section>
       <section id="memoria-viva" class="stack">
         <h2>Un lugar de memoria viva</h2>
-        <p>El Ángel no es solo un lugar de silencio. Aquí conviven las tradiciones andinas, criollas y católicas, y la memoria de quienes partieron se celebra en familia.</p>
+        <p>El Cementerio del Ángel no es solo un lugar de silencio. Aquí conviven las tradiciones andinas, criollas y católicas, y la memoria de quienes partieron se celebra en familia.</p>
         <div class="benefits">
           <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>1 y 2 de noviembre</strong>Miles de familias acompañan a sus seres queridos con música, danzantes de tijeras y comidas tradicionales, como en sus pueblos de origen.</p></div>
           <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Devoción popular</strong>La tumba de Chacalón recibe velas y placas de agradecimiento todo el año, y romerías cada 24 de junio.</p></div>
           <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Fe cotidiana</strong>En la capilla, una réplica del «Niño Ricardito» recibe flores, cartas y juguetes de quienes agradecen un favor.</p></div>
-          <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Museo a cielo abierto</strong>Arquitectura, arte e historia que hacen de El Ángel un patrimonio de Lima y del Perú.</p></div>
+          <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Museo a cielo abierto</strong>Arquitectura, arte e historia que hacen del Cementerio del Ángel un patrimonio de Lima y del Perú.</p></div>
+          <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Recorridos nocturnos</strong>Visitas guiadas de noche. Fechas e inscripción por confirmar.</p></div>
+        </div>
+      <div class="gallery g3">
+          <figure><img src="img/foto-capilla.jpg" alt="Capilla del Cementerio del Ángel" loading="lazy"></figure>
+          <figure><img src="img/escultura-5.jpg" alt="Sagrado Corazón entre nichos" loading="lazy"></figure>
+          <figure><img src="img/escultura-7.jpg" alt="Escultura de Cristo con los brazos abiertos" loading="lazy"></figure>
         </div>
       </section>
       <section id="gestion" class="stack">
@@ -868,10 +963,13 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
           <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Espacios cuidados</strong>Mantenimiento de los pabellones históricos, las áreas verdes y las veredas.</p></div>
           <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Abierto a la cultura</strong>Visitas guiadas y recorridos que ponen en valor su historia.</p></div>
         </div>
-        <p><a class="btn ghost" href="#renovacion">Ver proyectos y mejoras →</a></p>
+        <p><a class="btn ghost" href="#renovacion">Ver proyectos →</a></p>
       </section>
       <section id="visita">
-        <h2>Ubicación y horarios</h2>
+        <h2>Plano y ubicación</h2>
+        <p class="callrow" style="margin-bottom:22px"><a class="btn primary" href="plano-cementerio.pdf" download>Descargar plano (PDF)</a></p>
+        <a class="planoimg" href="plano-cementerio.pdf" target="_blank" rel="noopener" aria-label="Abrir el plano del cementerio en PDF"><img src="img/plano-preview.jpg" alt="Plano general del Cementerio del Ángel, marzo 2026" loading="lazy"></a>
+        <p class="callrow" style="margin:0"></p>
         <dl class="facts">
           <div><dt>Dirección</dt><dd>Cercado de Lima · por confirmar</dd></div>
           <div><dt>Horario de visita</dt><dd>Lunes a domingo · por confirmar</dd></div>
@@ -895,9 +993,9 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
 </div>
 
 <!-- =================== RENOVACIÓN =================== -->
-<div class="page" id="renovacion" data-page="renovacion" data-title="Proyectos y renovación" hidden>
-  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/cuidadores.jpg" alt="Personal cuidando un pabellón del Cementerio El Ángel" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/pabellon.jpg" alt="Pabellones del Cementerio El Ángel" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/hero-2.jpg" alt="Calle del Cementerio El Ángel con mausoleos y árboles" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Proyectos y renovación</p><h1>Un cementerio que mejora cada año</h1><p>Separamos lo que ya está en marcha de lo que aún depende de autorizaciones, desarrollo e inversión.</p></div></section>
-  <nav class="crumbs" aria-label="Ruta"><div class="wrap"><ol><li><a href="#inicio">Inicio</a></li><li aria-current="page">Proyectos y renovación</li></ol></div></nav>
+<div class="page" id="renovacion" data-page="renovacion" data-title="Proyectos" hidden>
+  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/cuidadores.jpg" alt="Personal cuidando un pabellón del Cementerio del Ángel" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/pabellon.jpg" alt="Pabellones del Cementerio del Ángel" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/hero-2.jpg" alt="Calle del Cementerio del Ángel con mausoleos y árboles" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Proyectos</p><h1>Un cementerio que mejora cada año</h1><p>Separamos lo que ya está en marcha de lo que aún depende de autorizaciones, desarrollo e inversión.</p></div></section>
+  <nav class="crumbs" aria-label="Ruta"><div class="wrap"><ol><li><a href="#inicio">Inicio</a></li><li aria-current="page">Proyectos</li></ol></div></nav>
   <div class="wrap sidecols">
     <nav class="sidenav" aria-label="En esta página"><p>En esta página</p><a href="#estado">Estado de los proyectos</a><a href="#compromisos">Compromisos de mejora</a></nav>
     <div class="content">
@@ -927,7 +1025,7 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
       </section>
       <section id="compromisos">
         <h2>Compromisos de mejora</h2>
-        <div class="figure" style="margin-bottom:24px"><img src="img/cuidadores.jpg" alt="Personal cuidando un pabellón de El Ángel" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></div>
+        <div class="figure" style="margin-bottom:24px"><img src="img/cuidadores.jpg" alt="Personal cuidando un pabellón del Cementerio del Ángel" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></div>
         <div class="benefits">
           <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Reinversión verificable</strong>Publicaremos los avances con fotografías y fechas.</p></div>
           <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Respeto por el patrimonio</strong>Cada mejora cuida el valor histórico del lugar.</p></div>
@@ -941,7 +1039,7 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
 
 <!-- =================== MEMORIA Y ORIENTACIÓN =================== -->
 <div class="page" id="orientacion" data-page="orientacion" data-title="Memoria y orientación" hidden>
-  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/cielo.jpg" alt="Pabellón del Cementerio El Ángel bajo el cielo de Lima" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/oratorio.jpg" alt="Oratorio del Cementerio El Ángel" loading="lazy"><figcaption>Foto: Juan Lozada · CC BY-SA 3.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/hero-2.jpg" alt="Calle del Cementerio El Ángel con mausoleos y árboles" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Memoria y orientación</p><h1>Información útil</h1><p>Guías breves sobre duelo, previsión, homenajes y cuidado de la memoria.</p></div></section>
+  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/cielo.jpg" alt="Pabellón del Cementerio del Ángel bajo el cielo de Lima" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/oratorio.jpg" alt="Oratorio del Cementerio del Ángel" loading="lazy"><figcaption>Foto: Juan Lozada · CC BY-SA 3.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/hero-2.jpg" alt="Calle del Cementerio del Ángel con mausoleos y árboles" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Memoria y orientación</p><h1>Información útil</h1><p>Guías breves sobre duelo, previsión, homenajes y cuidado de la memoria.</p></div></section>
   <nav class="crumbs" aria-label="Ruta"><div class="wrap"><ol><li><a href="#inicio">Inicio</a></li><li aria-current="page">Memoria y orientación</li></ol></div></nav>
   <div class="wrap sidecols">
     <nav class="sidenav" aria-label="Categorías"><p>Categorías</p><a href="#duelo">Duelo</a><a href="#prevision-guia">Previsión</a><a href="#homenajes">Homenajes</a></nav>
@@ -964,20 +1062,20 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
 
 <!-- =================== NOSOTROS =================== -->
 <div class="page" id="nosotros" data-page="nosotros" data-title="Nosotros" hidden>
-  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/equipo.jpg" alt="Equipo de SERENITY frente a la portada del Cementerio El Ángel" loading="lazy"><figcaption>Equipo SERENITY en la portada de El Ángel</figcaption></figure><figure class="slide"><img src="img/oratorio.jpg" alt="Oratorio del Cementerio El Ángel" loading="lazy"><figcaption>Foto: Juan Lozada · CC BY-SA 3.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/cuidadores.jpg" alt="Personal cuidando un pabellón del Cementerio El Ángel" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/hero-1.jpg" alt="Pabellón interior del Cementerio El Ángel" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Nosotros</p><h1>Quién es SERENITY</h1><p>Memoria histórica y gestión moderna, cercana y transparente en un mismo lugar.</p></div></section>
+  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/hero-1.jpg" alt="Pabellón interior del Cementerio del Ángel" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/oratorio.jpg" alt="Oratorio del Cementerio del Ángel" loading="lazy"><figcaption>Foto: Juan Lozada · CC BY-SA 3.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/cuidadores.jpg" alt="Personal cuidando un pabellón del Cementerio del Ángel" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/hero-1.jpg" alt="Pabellón interior del Cementerio del Ángel" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Nosotros</p><h1>Quién es SERENITY</h1><p>Memoria histórica y gestión moderna, cercana y transparente en un mismo lugar.</p></div></section>
   <nav class="crumbs" aria-label="Ruta"><div class="wrap"><ol><li><a href="#inicio">Inicio</a></li><li aria-current="page">Nosotros</li></ol></div></nav>
   <div class="wrap sidecols">
     <nav class="sidenav" aria-label="En esta página"><p>En esta página</p><a href="#historia-serenity">Nuestra historia</a><a href="#funcion">Nuestra función</a><a href="#principios">Principios</a><a href="#mision">Misión y visión</a><a href="#alianzas">Alianzas</a></nav>
     <div class="content">
       <section id="historia-serenity" class="stack">
         <h2>Nuestra historia</h2>
-        <p class="lede">SERENITY nació para recuperar y modernizar la operación del Cementerio El Ángel.</p>
+        <p class="lede">SERENITY nació para recuperar y modernizar la operación del Cementerio del Ángel.</p>
         <p>No buscamos crear un cementerio nuevo, sino transformar gradualmente uno existente: recuperar la confianza, invertir según la demanda real, ampliar las alternativas y construir una operación sostenible de largo plazo.</p>
-        <div class="figure"><img src="img/equipo.jpg" alt="Equipo de SERENITY frente a la portada del Cementerio El Ángel" loading="lazy"><figcaption>Equipo SERENITY en la portada de El Ángel</figcaption></div>
+        <div class="figure"><img class="pos-team" src="img/equipo-2.jpg" alt="Equipo de SERENITY en el Cementerio del Ángel" loading="lazy"><figcaption>Equipo SERENITY en el Cementerio del Ángel</figcaption></div>
       </section>
       <section id="funcion" class="stack">
         <h2>Nuestra función</h2>
-        <p class="role" style="margin-top:0"><svg aria-hidden="true"><use href="#i-info"/></svg><span>SERENITY opera y administra los servicios del Cementerio El Ángel en el marco del contrato suscrito con la Sociedad de Beneficencia de Lima Metropolitana. SERENITY no es propietaria del cementerio ni sustituye las competencias de la Beneficencia.</span></p>
+        <p class="role" style="margin-top:0"><svg aria-hidden="true"><use href="#i-info"/></svg><span>SERENITY opera y administra los servicios del Cementerio del Ángel en el marco del contrato suscrito con la Sociedad de Beneficencia de Lima Metropolitana. SERENITY no es propietaria del cementerio ni sustituye las competencias de la Beneficencia.</span></p>
       </section>
       <section id="principios">
         <h2>Principios de servicio</h2>
@@ -985,11 +1083,11 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
           <div><h3>Respeto</h3><p>Por cada persona, cada familia y cada creencia.</p></div>
           <div><h3>Claridad</h3><p>La misma información y precio en la web, por teléfono y en persona.</p></div>
           <div><h3>Mejora continua</h3><p>Recuperamos espacios de forma progresiva y verificable.</p></div>
-          <div><h3>Sostenibilidad</h3><p>Una operación sana que permite reinvertir en El Ángel.</p></div>
+          <div><h3>Sostenibilidad</h3><p>Una operación sana que permite reinvertir en el Cementerio del Ángel.</p></div>
         </div>
       </section>
       <section id="mision" class="two" style="gap:32px">
-        <div class="stack"><h2>Misión</h2><p class="muted">Administrar y desarrollar los servicios del Cementerio El Ángel con respeto, transparencia y sensibilidad, ofreciendo alternativas memoriales dignas, atención clara y espacios progresivamente mejorados, mientras contribuimos a conservar y poner en valor su patrimonio.</p></div>
+        <div class="stack"><h2>Misión</h2><p class="muted">Administrar y desarrollar los servicios del Cementerio del Ángel con respeto, transparencia y sensibilidad, ofreciendo alternativas memoriales dignas, atención clara y espacios progresivamente mejorados, mientras contribuimos a conservar y poner en valor su patrimonio.</p></div>
         <div class="stack"><h2>Visión</h2><p class="muted">Ser un referente de gestión moderna de cementerios urbanos en el Perú, reconocido por la calidad de su atención, la diversidad de soluciones, la mejora visible de la infraestructura y el respeto por la memoria y el patrimonio.</p></div>
       </section>
       <section id="alianzas">
@@ -1006,51 +1104,55 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
 
 <!-- =================== CONTACTO =================== -->
 <div class="page" id="contacto" data-page="contacto" data-title="Contacto y cotización" hidden>
-  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/plaza.jpg" alt="Explanada de ingreso al Cementerio El Ángel" loading="lazy"><figcaption>Foto: Fmurillo26 · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/hero-3.jpg" alt="Entrada al Cementerio El Ángel" loading="lazy"><figcaption>Foto: Juan Lozada · CC BY-SA 3.0 · Wikimedia Commons</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Contacto y cotización</p><h1>Hable con una persona</h1><p>Elija el canal que le resulte más cómodo. Si es urgente, llámenos.</p></div></section>
+  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/plaza.jpg" alt="Explanada de ingreso al Cementerio del Ángel" loading="lazy"><figcaption>Foto: Fmurillo26 · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/hero-3.jpg" alt="Entrada al Cementerio del Ángel" loading="lazy"><figcaption>Foto: Juan Lozada · CC BY-SA 3.0 · Wikimedia Commons</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Contacto y cotización</p><h1>Hable con una persona</h1><p>Elija el canal que le resulte más cómodo. Si es urgente, llámenos.</p></div></section>
   <nav class="crumbs" aria-label="Ruta"><div class="wrap"><ol><li><a href="#inicio">Inicio</a></li><li aria-current="page">Contacto y cotización</li></ol></div></nav>
   <div class="wrap" style="padding-block:48px 88px">
     <div class="contact">
       <div>
         <dl class="channels">
-          <div><dt>Teléfono</dt><dd><span class="big">(01) 000-0000</span><br><small class="muted">Atención inmediata</small></dd></div>
-          <div><dt>WhatsApp</dt><dd><span class="big">+51 900 000 000</span><br><small class="muted">Respuesta y seguimiento</small></dd></div>
-          <div><dt>Correo</dt><dd>atencion@serenity.pe <small class="muted">(referencial)</small></dd></div>
-          <div><dt>Oficina</dt><dd>Cementerio El Ángel, Cercado de Lima<br><small class="muted">Horario por confirmar</small></dd></div>
+          <div><dt>Mesa de partes</dt><dd><a class="big" href="tel:+51912610585">+51 912 610 585</a><br><a href="mailto:mesadepartes@serenityasociados.com">mesadepartes@serenityasociados.com</a><br><small class="muted">Gestiones y trámites</small></dd></div>
+          <div><dt>Comercial</dt><dd><a class="big" href="tel:+51977527234">+51 977 527 234</a><br><a href="mailto:gzena@serenityasociados.com">gzena@serenityasociados.com</a><br><small class="muted">Ventas y planes personalizados</small></dd></div>
+          <div><dt>Oficina</dt><dd>Cementerio del Ángel, Cercado de Lima<br><small class="muted">Horario por confirmar</small></dd></div>
         </dl>
         <div class="map" aria-label="Mapa referencial">
           <svg viewBox="0 0 480 270" aria-hidden="true">
             <rect width="480" height="270" fill="var(--surface)"/>
             <g stroke="var(--line)" stroke-width="10" fill="none"><path d="M0 90h480M0 200h480M130 0v270M340 0v270"/></g>
             <g stroke="var(--line)" stroke-width="4" fill="none"><path d="M0 40l480 60M60 270L260 0"/></g>
-            <rect x="180" y="110" width="130" height="70" fill="#A9C0A6" opacity=".55"/>
-            <circle cx="245" cy="145" r="9" fill="#6BABD9"/><circle cx="245" cy="145" r="20" fill="none" stroke="#6BABD9" stroke-width="1.5"/>
-            <text x="245" y="205" text-anchor="middle" font-family="Jost, sans-serif" font-size="12" letter-spacing="1.5" fill="var(--ink)">CEMENTERIO EL ÁNGEL</text>
+            <rect x="180" y="110" width="130" height="70" fill="#AFD4B2" opacity=".55"/>
+            <circle cx="245" cy="145" r="9" fill="#6CAADA"/><circle cx="245" cy="145" r="20" fill="none" stroke="#6CAADA" stroke-width="1.5"/>
+            <text x="245" y="205" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="12" letter-spacing="1.5" fill="var(--ink)">CEMENTERIO DEL ÁNGEL</text>
           </svg>
         </div>
       </div>
-      <form class="quote" id="quote" novalidate>
+      <!-- Envío con FormSubmit. Correo de PRUEBA: cambiar por el definitivo antes de publicar -->
+      <form class="quote" id="quote" action="https://formsubmit.co/alexander.miller.rojas@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nueva consulta · web SERENITY"><input type="hidden" name="_template" value="table"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <fieldset class="seg full">
           <legend>¿Qué necesita?</legend>
-          <label><input type="radio" name="tipo" id="t1" value="inmediata"><span>Atención inmediata</span></label>
-          <label><input type="radio" name="tipo" id="t2" value="prevision" checked><span>Planificar</span></label>
-          <label><input type="radio" name="tipo" id="t3" value="info"><span>Información</span></label>
-          <label><input type="radio" name="tipo" id="t4" value="alianza"><span>Alianza</span></label>
+          <label><input type="radio" name="tipo" id="t1" value="Atención inmediata"><span>Atención inmediata</span></label>
+          <label><input type="radio" name="tipo" id="t2" value="Planificar" checked><span>Planificar</span></label>
+          <label><input type="radio" name="tipo" id="t3" value="Información"><span>Información</span></label>
+          <label><input type="radio" name="tipo" id="t4" value="Alianza"><span>Alianza</span></label>
         </fieldset>
-        <label>Nombre<input id="nombre" name="nombre" autocomplete="name" required value="María Quispe"></label>
-        <label>Teléfono o WhatsApp<input id="telefono" name="telefono" type="tel" autocomplete="tel" required value="+51 9XX XXX XXX"></label>
+        <label>Nombre<input id="nombre" name="nombre" autocomplete="name" required></label>
+        <label>Teléfono o WhatsApp<input id="telefono" name="telefono" type="tel" autocomplete="tel" required></label>
+        <label class="full">Correo electrónico (opcional)<input id="email" name="email" type="email" autocomplete="email"></label>
         <label class="full">Alternativa de interés
           <select id="interes" name="interes">
             <option>Aún no lo sé, quiero orientación</option>
-            <option selected>Nicho</option>
-            <option>Tumba o solución familiar</option>
-            <option>Mausoleo</option>
-            <option>Columbario o cinerario</option>
+            <option>Nicho</option>
+            <option>Mausoleo tumba</option>
+            <option>Mausoleo capilla</option>
+            <option>Columbarios</option>
+            <option>Cremación</option>
+            <option>Exhumaciones</option>
+            <option>Traslados</option>
           </select>
         </label>
-        <label class="full">Mensaje<textarea id="mensaje" name="mensaje">Quisiera conocer alternativas para dos personas y las opciones de pago en cuotas.</textarea></label>
-        <label class="check full"><input type="checkbox" id="acepto" required checked> Acepto la política de privacidad y que SERENITY me contacte para responder mi consulta.</label>
+        <label class="full">Mensaje<textarea id="mensaje" name="mensaje" required></textarea></label>
+        <label class="check full"><input type="checkbox" id="acepto" name="acepta_privacidad" value="Sí" required> Acepto la política de privacidad y que SERENITY me contacte para responder mi consulta.</label>
         <div class="full"><button class="btn primary" type="submit">Enviar consulta</button></div>
-        <p class="sent" id="sent" hidden>Consulta registrada. En el sitio final se enviará al equipo de atención (esta página es un prototipo).</p>
       </form>
     </div>
   </div>
@@ -1058,12 +1160,12 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
 
 <!-- =================== LEGAL =================== -->
 <div class="page" id="legal" data-page="legal" data-title="Aspectos legales" hidden>
-  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/hero-1.jpg" alt="Pabellón interior del Cementerio El Ángel" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/fachada.jpg" alt="Relieve artístico en la fachada del Cementerio El Ángel" loading="lazy"><figcaption>Foto: Saludevi · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Aspectos legales</p><h1>Información legal</h1><p>Privacidad, cookies, términos, libro de reclamaciones y relación contractual.</p></div></section>
+  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/hero-1.jpg" alt="Pabellón interior del Cementerio del Ángel" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure><figure class="slide"><img src="img/fachada.jpg" alt="Relieve artístico en la fachada del Cementerio del Ángel" loading="lazy"><figcaption>Foto: Saludevi · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Aspectos legales</p><h1>Información legal</h1><p>Privacidad, cookies, términos, libro de reclamaciones y relación contractual.</p></div></section>
   <nav class="crumbs" aria-label="Ruta"><div class="wrap"><ol><li><a href="#inicio">Inicio</a></li><li aria-current="page">Aspectos legales</li></ol></div></nav>
   <div class="wrap sidecols">
     <nav class="sidenav" aria-label="En esta página"><p>En esta página</p><a href="#beneficencia">Relación con la Beneficencia</a><a href="#privacidad">Privacidad</a><a href="#cookies">Cookies</a><a href="#terminos">Términos</a><a href="#reclamaciones">Libro de reclamaciones</a></nav>
     <div class="content">
-      <section id="beneficencia" class="stack"><h2>Relación con la Beneficencia</h2><p>SERENITY opera y administra los servicios del Cementerio El Ángel en el marco del contrato suscrito con la Sociedad de Beneficencia de Lima Metropolitana. SERENITY no es propietaria del cementerio ni sustituye las competencias de la Beneficencia.</p><p class="muted">Detalle contractual por redactar con el área legal.</p></section>
+      <section id="beneficencia" class="stack"><h2>Relación con la Beneficencia</h2><p>SERENITY opera y administra los servicios del Cementerio del Ángel en el marco del contrato suscrito con la Sociedad de Beneficencia de Lima Metropolitana. SERENITY no es propietaria del cementerio ni sustituye las competencias de la Beneficencia.</p><p class="muted">Detalle contractual por redactar con el área legal.</p></section>
       <section id="privacidad" class="stack"><h2>Política de privacidad</h2><p class="muted">Texto por redactar con el área legal.</p></section>
       <section id="cookies" class="stack"><h2>Política de cookies</h2><p class="muted">Texto por redactar con el área legal.</p></section>
       <section id="terminos" class="stack"><h2>Términos y condiciones</h2><p class="muted">Texto por redactar con el área legal.</p></section>
@@ -1078,13 +1180,13 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
   <div class="wrap">
     <div class="fcols">
       <div class="fbrand">
-        <a class="brand" href="#inicio" aria-label="Serenity El Ángel, inicio"><span class="logo" role="img" aria-label="Serenity"></span><span class="sub">El Ángel<br>Servicios memoriales</span></a>
-        <p>Administración y servicios memoriales en el Cementerio El Ángel, en el marco del contrato con la Sociedad de Beneficencia de Lima Metropolitana.</p>
+        <a class="brand" href="#inicio" aria-label="Serenity Cementerio del Ángel, inicio"><span class="logo" role="img" aria-label="Serenity"></span><span class="sub">Cementerio del Ángel<br>Servicios memoriales</span></a>
+        <p>Administración y servicios memoriales en el Cementerio del Ángel, en el marco del contrato con la Sociedad de Beneficencia de Lima Metropolitana.</p>
       </div>
-      <div><h4>Soluciones</h4><ul><li><a href="#nichos">Nichos</a></li><li><a href="#tumbas">Tumbas</a></li><li><a href="#mausoleos">Mausoleos</a></li><li><a href="#columbarios">Columbarios y cinerarios</a></li></ul></div>
-      <div><h4>Servicios</h4><ul><li><a href="#tramites">Atención inmediata</a></li><li><a href="#planificar">Planificación anticipada</a></li><li><a href="#preguntas">Preguntas frecuentes</a></li><li><a href="#orientacion">Memoria y orientación</a></li></ul></div>
-      <div><h4>El Ángel</h4><ul><li><a href="#el-angel">Historia y patrimonio</a></li><li><a href="#visita">Horarios y visitas</a></li><li><a href="#renovacion">Proyectos y renovación</a></li><li><a href="#nosotros">Nosotros</a></li></ul></div>
-      <div><h4>En línea</h4><ul><li><a href="#contacto">Cotización</a></li><li class="soon">Área de clientes · pronto</li><li class="soon">Pagos en línea · pronto</li><li class="soon">Buscador · pronto</li></ul></div>
+      <div><h4>Servicios</h4><ul><li><a href="#nichos">Nichos</a></li><li><a href="#mausoleo-tumba">Mausoleo tumba</a></li><li><a href="#mausoleo-capilla">Mausoleo capilla</a></li><li><a href="#columbarios">Columbarios</a></li><li><a href="#cremacion">Cremación</a></li><li><a href="#exhumaciones">Exhumaciones</a></li><li><a href="#traslados">Traslados</a></li></ul></div>
+      <div><h4>Trámites</h4><ul><li><a href="#tramites">Mesa de partes</a></li><li><a href="#busquedas">Búsqueda virtual</a></li><li><a href="#planificar">Planes personalizados</a></li><li><a href="#preguntas">Preguntas frecuentes</a></li><li><a href="#orientacion">Memoria y orientación</a></li></ul></div>
+      <div><h4>Cementerio del Ángel</h4><ul><li><a href="#historia">Historia</a></li><li><a href="#patrimonio">Patrimonio</a></li><li><a href="#visita">Plano y horarios</a></li><li><a href="#renovacion">Proyectos</a></li><li><a href="#nosotros">Nosotros</a></li></ul></div>
+      <div><h4>En línea</h4><ul><li><a href="#contacto">Cotización</a></li><li><a href="#busquedas">Búsqueda virtual</a></li><li class="soon">Área de clientes · pronto</li><li class="soon">Pagos en línea · pronto</li></ul></div>
     </div>
     <div class="legalrow">
       <nav aria-label="Legal"><a href="#privacidad">Privacidad</a><a href="#cookies">Cookies</a><a href="#terminos">Términos</a><a href="#beneficencia">Relación con la Beneficencia</a></nav>
@@ -1134,6 +1236,8 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
   // Cada opción del menú abre su propia página; los enlaces internos (#nichos) abren la página que los contiene
   function route(){
     var id=(location.hash||'#inicio').slice(1)||'inicio';
+    var alias={soluciones:'planificar',tumbas:'mausoleo-tumba',mausoleos:'mausoleo-capilla',arquitectura:'patrimonio'};
+    if(alias[id]) id=alias[id];
     var target=document.getElementById(id);
     var page=target ? target.closest('.page') : null;
     if(!page){ page=document.getElementById('inicio'); target=page; }
@@ -1142,7 +1246,7 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
     navLinks.forEach(function(a){
       if(a.getAttribute('href')==='#'+key) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
     });
-    document.title=(key==='inicio'?'':page.getAttribute('data-title')+' · ')+'SERENITY El Ángel';
+    document.title=(key==='inicio'?'':page.getAttribute('data-title')+' · ')+'SERENITY · Cementerio del Ángel';
     closeMenus();
     if(target===page) window.scrollTo(0,0);
     else requestAnimationFrame(function(){ target.scrollIntoView(); if(target.tagName==='DETAILS') target.open=true; });
@@ -1174,12 +1278,16 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(255,255,255,.1
     play();
   });
 
-  var form=document.getElementById('quote'), sent=document.getElementById('sent');
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    if(!form.checkValidity()){ form.reportValidity(); return; }
-    sent.hidden=false;
-  });
+  // Búsqueda virtual: el formulario se envía por correo (FormSubmit); este botón la manda por WhatsApp
+  var bf=document.getElementById('bform');
+  if(bf){
+    bf.querySelector('button[data-via="whatsapp"]').addEventListener('click',function(){
+      if(!bf.checkValidity()){ bf.reportValidity(); return; }
+      var v=function(n){ return bf.elements[n].value.trim(); };
+      var txt='Solicitud de búsqueda\nSolicitante: '+v('solicitante')+'\nTeléfono: '+v('telefono')+'\nDifunto: '+v('difunto')+'\nFecha de fallecimiento: '+v('fecha');
+      window.open('https://wa.me/51912610585?text='+encodeURIComponent(txt),'_blank','noopener');
+    });
+  }
 })();
 </script>
 
