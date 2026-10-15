@@ -125,7 +125,7 @@ nav.main a[aria-current="page"]{color:var(--link);border-bottom-color:var(--deta
 .burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);width:44px;height:44px;cursor:pointer;color:var(--ink);flex:none}
 .burger span{display:block;width:20px;height:1.5px;background:currentColor;margin:4px auto}
 @media (max-width:1200px){
-  nav.main{display:none;position:absolute;left:calc(-1 * var(--gutter));right:calc(-1 * var(--gutter));top:100%;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 16px 30px rgba(0,0,0,.08)}
+  nav.main{display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 16px 30px rgba(0,0,0,.08)}
   nav.main.open{display:block}
   nav.main ul{flex-direction:column;gap:0;padding:8px var(--gutter) 16px}
   nav.main a{display:block;padding:13px 0;border-bottom:1px solid var(--line);font-size:.88rem}
@@ -364,7 +364,7 @@ tbody tr:last-child>*{border-bottom:0}
 .channels dd{margin:0}
 .channels .big{font-family:var(--display);font-size:1.3rem;letter-spacing:.04em;user-select:all}
 .map{margin-top:24px;aspect-ratio:16/9;max-width:100%;background:var(--surface);border:1px solid var(--line);overflow:hidden}
-.map svg{width:100%;height:100%;display:block}
+.map svg,.map iframe{width:100%;height:100%;display:block;border:0}
 form.quote{background:var(--surface);padding:28px;display:grid;gap:16px;grid-template-columns:1fr 1fr;border:1px solid var(--line)}
 form.quote .full{grid-column:1/-1}
 form.quote label{display:grid;gap:6px;font-size:.9rem;font-weight:600}
@@ -416,19 +416,15 @@ footer.site{background:var(--footer-bg);border-top:1px solid rgba(239,235,224,.1
 /* ===== Ajustes de la revisión del 12-oct-2026 ===== */
 body{font-size:16px}
 h1,h2,h3{letter-spacing:.03em;font-weight:400}
-nav.main ul{gap:13px}
-nav.main a{letter-spacing:.04em;font-size:.68rem}
+@media (min-width:1201px){nav.main ul{gap:13px}nav.main a{letter-spacing:.04em;font-size:.68rem}}
 .eyebrow,.access .k,.sidenav p,.spec dt,.facts dt,.channels dt,.fcols h4{letter-spacing:.12em}
 .btn{letter-spacing:.08em;font-size:.74rem}
 .btn,.online>button,.theme-toggle,.burger{border-radius:999px}
-.btn.primary{background:var(--accent);color:var(--accent-ink)}
-.btn.ghost{border:1.5px solid var(--heading);color:var(--heading);background:transparent}
-.btn.ghost:hover{background:var(--heading);color:var(--bg);filter:none}
-/* sobre fondos verdes (topbar, secciones alternas, franja de contacto) el botón de apoyo va en azul para que se distinga */
-section.alt .btn.bronze,.cta-band .btn.bronze,.topbar .online>button{background:var(--azul);color:#EFEBE0}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) section.alt .btn.bronze{background:var(--celeste);color:var(--azul)}}
-:root[data-theme="dark"] section.alt .btn.bronze{background:var(--celeste);color:var(--azul)}
-.btn.bronze{background:var(--celeste);color:var(--azul)}
+/* Botones: el principal siempre celeste; cuando van en pareja, el segundo en verde
+   (y en beige si el fondo ya es verde). Solo «Llamar» del botón flotante queda en azul. */
+.btn.primary,.btn.bronze,.btn.ghost,.btn.light,.online>button{background:var(--celeste);color:var(--azul);border:0}
+.callrow .btn+.btn{background:var(--verde);color:var(--azul)}
+section.alt .callrow .btn+.btn{background:var(--bg)}
 .online .menu{border-radius:18px;overflow:hidden}
 .access .grid{gap:16px}
 .access .grid a,.card,.box,.panel,.role,.sent,.map,.ficha .img,.figure,.tablewrap,.article .thumb,form.quote,.bform{border-radius:22px}
@@ -464,11 +460,16 @@ form.quote input,form.quote select,form.quote textarea,.bform input{border-radiu
 .figure:has(img.pos-team){aspect-ratio:4/3}
 .figure img.pos-team{object-position:50% 82%}
 .figure img.pos-capilla{object-position:50% 30%}
+p,dd,li{overflow-wrap:anywhere} /* correos largos no desbordan en celular */
 .topbar .wrap{font-size:.84rem;white-space:nowrap}
 @media (max-width:900px){.topbar .msg{display:none}.topbar .wrap{justify-content:center}}
 @media (max-width:640px){.topbar .nums span:last-child{display:none}.topbar .nums{gap:0}}
 @media (max-width:480px){.topbar .nums{display:none}.brand .sub{display:none}}
-@media (max-width:760px){.bform,.gallery,.esculturas,.gallery.g3{grid-template-columns:1fr}}
+@media (max-width:760px){.bform,.gallery{grid-template-columns:1fr}
+  .esculturas{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .gallery.g3{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .hero::after,.phero::after{background:linear-gradient(180deg,rgba(12,30,52,.6) 0%,rgba(12,30,52,.7) 55%,rgba(12,30,52,.82) 100%)}}
+.hero .eyebrow,.phero .eyebrow{text-shadow:0 1px 10px rgba(8,20,36,.6)}
 </style>
 </head>
 <body>
@@ -972,11 +973,12 @@ form.quote input,form.quote select,form.quote textarea,.bform input{border-radiu
         <a class="planoimg" href="plano-cementerio.pdf" target="_blank" rel="noopener" aria-label="Abrir el plano del cementerio en PDF"><img src="img/plano-preview.jpg" alt="Plano general del Cementerio del Ángel, marzo 2026" loading="lazy"></a>
         <p class="callrow" style="margin:0"></p>
         <dl class="facts">
-          <div><dt>Dirección</dt><dd>Cercado de Lima · por confirmar</dd></div>
+          <div><dt>Dirección</dt><dd>Jr. Áncash cuadra 17, El Agustino, Lima</dd></div>
           <div><dt>Horario de visita</dt><dd>Lunes a domingo · por confirmar</dd></div>
           <div><dt>Atención al público</dt><dd>Oficina en el cementerio · por confirmar</dd></div>
-          <div><dt>Cómo llegar</dt><dd>Transporte público y estacionamiento · por confirmar</dd></div>
+          <div><dt>Cómo llegar</dt><dd><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Cementerio+El+%C3%81ngel,+Jr.+%C3%81ncash,+El+Agustino,+Lima" target="_blank" rel="noopener">Abrir ruta en Google Maps</a></dd></div>
         </dl>
+        <div class="map" style="margin-top:22px"><iframe src="https://www.google.com/maps?q=Cementerio+El+%C3%81ngel,+Jr.+%C3%81ncash,+El+Agustino,+Lima&amp;z=16&amp;output=embed" title="Mapa: Cementerio del Ángel, Jr. Áncash cuadra 17, El Agustino" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
       </section>
       <section id="normas">
         <h2>Normas de visita</h2>
@@ -1113,18 +1115,10 @@ form.quote input,form.quote select,form.quote textarea,.bform input{border-radiu
         <dl class="channels">
           <div><dt>Mesa de partes</dt><dd><a class="big" href="tel:+51912610585">+51 912 610 585</a><br><a href="mailto:mesadepartes@serenityasociados.com">mesadepartes@serenityasociados.com</a><br><small class="muted">Gestiones y trámites</small></dd></div>
           <div><dt>Comercial</dt><dd><a class="big" href="tel:+51977527234">+51 977 527 234</a><br><a href="mailto:gzena@serenityasociados.com">gzena@serenityasociados.com</a><br><small class="muted">Ventas y planes personalizados</small></dd></div>
-          <div><dt>Oficina</dt><dd>Cementerio del Ángel, Cercado de Lima<br><small class="muted">Horario por confirmar</small></dd></div>
+          <div><dt>Oficina</dt><dd>Cementerio del Ángel · Jr. Áncash cuadra 17, El Agustino, Lima<br><small class="muted">Horario por confirmar</small></dd></div>
         </dl>
-        <div class="map" aria-label="Mapa referencial">
-          <svg viewBox="0 0 480 270" aria-hidden="true">
-            <rect width="480" height="270" fill="var(--surface)"/>
-            <g stroke="var(--line)" stroke-width="10" fill="none"><path d="M0 90h480M0 200h480M130 0v270M340 0v270"/></g>
-            <g stroke="var(--line)" stroke-width="4" fill="none"><path d="M0 40l480 60M60 270L260 0"/></g>
-            <rect x="180" y="110" width="130" height="70" fill="#AFD4B2" opacity=".55"/>
-            <circle cx="245" cy="145" r="9" fill="#6CAADA"/><circle cx="245" cy="145" r="20" fill="none" stroke="#6CAADA" stroke-width="1.5"/>
-            <text x="245" y="205" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="12" letter-spacing="1.5" fill="var(--ink)">CEMENTERIO DEL ÁNGEL</text>
-          </svg>
-        </div>
+        <div class="map"><iframe src="https://www.google.com/maps?q=Cementerio+El+%C3%81ngel,+Jr.+%C3%81ncash,+El+Agustino,+Lima&amp;z=16&amp;output=embed" title="Mapa: Cementerio del Ángel, Jr. Áncash cuadra 17, El Agustino" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+        <p style="margin-top:12px"><a class="btn primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=Cementerio+El+%C3%81ngel,+Jr.+%C3%81ncash,+El+Agustino,+Lima" target="_blank" rel="noopener">Cómo llegar</a></p>
       </div>
       <!-- Envío con FormSubmit. Correo de PRUEBA: cambiar por el definitivo antes de publicar -->
       <form class="quote" id="quote" action="https://formsubmit.co/alexander.miller.rojas@gmail.com" method="POST">
