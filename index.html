@@ -751,7 +751,7 @@ form.quote input,form.quote select,form.quote textarea,.bform input{border-radiu
         <p class="muted">100 % en línea, sin ir al cementerio. Elija cómo enviarla.</p>
         <!-- Envío con FormSubmit. Correo de PRUEBA: cambiar por mesadepartes@serenityasociados.com antes de publicar -->
         <form class="bform" id="bform" action="https://formsubmit.co/alexander.miller.rojas@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="Solicitud de búsqueda · web SERENITY"><input type="hidden" name="_template" value="table"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="_subject" value="Solicitud de búsqueda · web SERENITY"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" value="https://equipoempresaspro-cloud.github.io/serenity-el-angel/?enviado=busqueda#busquedas"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
           <label>Nombre y apellido del solicitante<input name="solicitante" autocomplete="name" required></label>
           <label>Número de teléfono<input name="telefono" type="tel" autocomplete="tel" required></label>
           <label>Nombres y apellidos del difunto<input name="difunto" required></label>
@@ -760,6 +760,7 @@ form.quote input,form.quote select,form.quote textarea,.bform input{border-radiu
             <button class="btn primary" type="submit">Enviar solicitud</button>
             <button class="btn bronze" type="button" data-via="whatsapp">Consultar por WhatsApp</button>
           </div>
+          <p class="sent full" id="sent-busqueda" role="status" hidden>Gracias, recibimos su solicitud de búsqueda. Mesa de partes le contactará pronto.</p>
         </form>
       </section>
       <section id="orientacion-tramites">
@@ -1127,7 +1128,7 @@ form.quote input,form.quote select,form.quote textarea,.bform input{border-radiu
       </div>
       <!-- Envío con FormSubmit. Correo de PRUEBA: cambiar por el definitivo antes de publicar -->
       <form class="quote" id="quote" action="https://formsubmit.co/alexander.miller.rojas@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="Nueva consulta · web SERENITY"><input type="hidden" name="_template" value="table"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="_subject" value="Nueva consulta · web SERENITY"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" value="https://equipoempresaspro-cloud.github.io/serenity-el-angel/?enviado=consulta#contacto"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <fieldset class="seg full">
           <legend>¿Qué necesita?</legend>
           <label><input type="radio" name="tipo" id="t1" value="Atención inmediata"><span>Atención inmediata</span></label>
@@ -1153,6 +1154,7 @@ form.quote input,form.quote select,form.quote textarea,.bform input{border-radiu
         <label class="full">Mensaje<textarea id="mensaje" name="mensaje" required></textarea></label>
         <label class="check full"><input type="checkbox" id="acepto" name="acepta_privacidad" value="Sí" required> Acepto la política de privacidad y que SERENITY me contacte para responder mi consulta.</label>
         <div class="full"><button class="btn primary" type="submit">Enviar consulta</button></div>
+        <p class="sent" id="sent-consulta" role="status" hidden>Gracias, recibimos su consulta. Le responderemos pronto.</p>
       </form>
     </div>
   </div>
@@ -1277,6 +1279,13 @@ form.quote input,form.quote select,form.quote textarea,.bform input{border-radiu
     dots.forEach(function(d,i){ d.addEventListener('click',function(){ show(i); play(); }); });
     play();
   });
+
+  // Al volver de FormSubmit (?enviado=...) se muestra el agradecimiento y se limpia la URL
+  try{
+    var env=new URLSearchParams(location.search).get('enviado');
+    var aviso=env && document.getElementById('sent-'+env);
+    if(aviso){ aviso.hidden=false; history.replaceState(null,'',location.pathname+location.hash); setTimeout(function(){ aviso.scrollIntoView({block:'center'}); },400); }
+  }catch(e){}
 
   // Búsqueda virtual: el formulario se envía por correo (FormSubmit); este botón la manda por WhatsApp
   var bf=document.getElementById('bform');
