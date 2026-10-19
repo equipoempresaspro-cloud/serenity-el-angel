@@ -23,7 +23,7 @@
 
   --bg:var(--blanco);
   --surface:#EFEBE0;
-  --surface-2:#AFD4B2;
+  --surface-2:#E8E0D1; /* Fondos alternos en arena noble en vez de verde masivo */
   --ink:var(--carbon);
   --ink-soft:#56606B;
   --line:#D9D1C2;
@@ -192,7 +192,7 @@ nav.main a[aria-current="page"]{color:var(--link);border-bottom-color:var(--deta
 .go{margin-top:auto;font-family:var(--display);text-transform:uppercase;font-size:.74rem;letter-spacing:.14em;display:inline-flex;align-items:center;gap:8px}
 .go::after{content:"→"}
 @media (max-width:820px){.access .grid{grid-template-columns:1fr}.access .grid a{min-height:0}}
-.role{margin-top:30px;display:flex;gap:14px;align-items:flex-start;padding:16px 20px;border:1px solid var(--line);background:var(--surface-2);font-size:.95rem}
+.role{margin-top:30px;display:flex;gap:14px;align-items:flex-start;padding:16px 20px;border:1px solid rgba(25,55,91,.18);background:var(--verde);color:var(--azul);font-size:.95rem}
 .role svg{flex:none;width:22px;height:22px;color:var(--detail);margin-top:2px}
 
 section.block{padding-block:clamp(52px,7vw,88px)}
@@ -424,7 +424,7 @@ h1,h2,h3{letter-spacing:.03em;font-weight:400}
    (y en beige si el fondo ya es verde). Solo «Llamar» del botón flotante queda en azul. */
 .btn.primary,.btn.bronze,.btn.ghost,.btn.light,.online>button{background:var(--celeste);color:var(--azul);border:0}
 .callrow .btn+.btn{background:var(--verde);color:var(--azul)}
-section.alt .callrow .btn+.btn{background:var(--bg)}
+section.alt .callrow .btn+.btn{background:var(--verde);color:var(--azul)}
 .online .menu{border-radius:18px;overflow:hidden}
 .access .grid{gap:16px}
 .access .grid a,.card,.box,.panel,.role,.sent,.map,.ficha .img,.figure,.tablewrap,.article .thumb,form.quote,.bform{border-radius:22px}
@@ -1298,7 +1298,13 @@ header.site .burger{color:#EFEBE0;border-color:rgba(239,235,224,.45)}
   var qf=document.getElementById('quote');
   if(qf){
     var destino={'Atención inmediata':'gzena@serenityasociados.com','Planificar':'gzena@serenityasociados.com','Trámites':'mesadepartes@serenityasociados.com','Alianza':'fcaceres@serenityasociados.com'};
-    var fijar=function(){ var t=qf.querySelector('input[name="tipo"]:checked'); qf.action='https://formsubmit.co/'+(destino[t?t.value:'Planificar']||destino.Planificar); };
+    var fijar=function(){
+      var t=qf.querySelector('input[name="tipo"]:checked');
+      var val=t?t.value:'Planificar';
+      qf.action='https://formsubmit.co/'+(destino[val]||destino.Planificar);
+      var sub=qf.querySelector('input[name="_subject"]');
+      if(sub) sub.value='Nueva consulta ['+val+'] · web SERENITY';
+    };
     [].forEach.call(qf.querySelectorAll('input[name="tipo"]'),function(r){ r.addEventListener('change',fijar); });
     qf.addEventListener('submit',fijar);
     fijar();
