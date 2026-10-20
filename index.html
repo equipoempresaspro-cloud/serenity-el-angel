@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="SERENITY administra y moderniza los servicios del Cementerio del Ángel en Lima.">
 <title>SERENITY · Cementerio Del Ángel</title>
-<script>/* Modo oscuro desactivado por ahora: siempre tema claro, aunque el dispositivo esté en modo oscuro */document.documentElement.setAttribute('data-theme','light')</script>
+<script>/* Tema claro + inicialización de los 5 modos de diseño */document.documentElement.setAttribute('data-theme','light');try{var m=new URLSearchParams(location.search).get('modo')||localStorage.getItem('serenity_palette')||'1';if(!/^[1-5]$/.test(m))m='1';document.documentElement.setAttribute('data-palette',m)}catch(e){document.documentElement.setAttribute('data-palette','1')}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
@@ -23,10 +23,10 @@
 
   --bg:var(--blanco);
   --surface:#EFEBE0;
-  --surface-2:#E8E0D1; /* Fondos alternos en arena noble en vez de verde masivo */
+  --surface-2:#DCE8F2; /* Celeste hielo suave de la paleta (cero marrón) */
   --ink:var(--carbon);
-  --ink-soft:#56606B;
-  --line:#D9D1C2;
+  --ink-soft:#4A5868;
+  --line:#C8D5E2;
   --accent:var(--azul);
   --accent-ink:#EFEBE0;
   --link:var(--verde-osc);
@@ -192,7 +192,7 @@ nav.main a[aria-current="page"]{color:var(--link);border-bottom-color:var(--deta
 .go{margin-top:auto;font-family:var(--display);text-transform:uppercase;font-size:.74rem;letter-spacing:.14em;display:inline-flex;align-items:center;gap:8px}
 .go::after{content:"→"}
 @media (max-width:820px){.access .grid{grid-template-columns:1fr}.access .grid a{min-height:0}}
-.role{margin-top:30px;display:flex;gap:14px;align-items:flex-start;padding:16px 20px;border:1px solid rgba(25,55,91,.18);background:var(--verde);color:var(--azul);font-size:.95rem}
+.role{margin-top:30px;display:flex;gap:14px;align-items:flex-start;padding:16px 20px;border:1px solid var(--line);background:var(--surface-2);font-size:.95rem}
 .role svg{flex:none;width:22px;height:22px;color:var(--detail);margin-top:2px}
 
 section.block{padding-block:clamp(52px,7vw,88px)}
@@ -424,7 +424,7 @@ h1,h2,h3{letter-spacing:.03em;font-weight:400}
    (y en beige si el fondo ya es verde). Solo «Llamar» del botón flotante queda en azul. */
 .btn.primary,.btn.bronze,.btn.ghost,.btn.light,.online>button{background:var(--celeste);color:var(--azul);border:0}
 .callrow .btn+.btn{background:var(--verde);color:var(--azul)}
-section.alt .callrow .btn+.btn{background:var(--verde);color:var(--azul)}
+section.alt .callrow .btn+.btn{background:var(--bg)}
 .online .menu{border-radius:18px;overflow:hidden}
 .access .grid{gap:16px}
 .access .grid a,.card,.box,.panel,.role,.sent,.map,.ficha .img,.figure,.tablewrap,.article .thumb,form.quote,.bform{border-radius:22px}
@@ -503,6 +503,137 @@ header.site .burger{color:#EFEBE0;border-color:rgba(239,235,224,.45)}
 .pendiente{border:1px dashed var(--line);border-radius:18px;padding:22px;text-align:center;color:var(--ink-soft);font-size:.92rem}
 .link-celeste{color:var(--celeste);text-decoration:underline;text-decoration-color:var(--celeste);text-underline-offset:3px;font-weight:500}
 .link-celeste:hover{color:var(--azul)}
+
+/* ==================== SELECTOR DE 5 MODOS DE DISEÑO (ESQUINA SUPERIOR DERECHA) ==================== */
+.topbar{position:sticky;top:0;z-index:55;transition:background-color .25s ease,color .25s ease}
+header.site{top:39px}
+.palette-switcher{display:inline-flex;align-items:center;gap:6px;background:var(--azul);color:#EFEBE0;padding:3px 10px 3px 11px;border-radius:999px;border:1.5px solid rgba(239,235,224,.35);box-shadow:0 2px 10px rgba(12,30,52,.18)}
+.palette-switcher .palette-label{font-family:var(--display);font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--celeste);white-space:nowrap}
+.palette-switcher select{appearance:none;-webkit-appearance:none;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236CAADA' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 4px center;color:#EFEBE0;border:0;font-family:var(--display);font-size:.72rem;font-weight:600;letter-spacing:.03em;padding:3px 20px 3px 2px;cursor:pointer;outline:none}
+.palette-switcher select option{background:var(--azul);color:#EFEBE0;font-weight:500}
+@media (max-width:860px){
+  .topbar .nums{display:none}
+  .topbar .wrap{justify-content:space-between;gap:6px 10px}
+  .topbar .tools{gap:6px 8px;margin-left:auto}
+  .palette-switcher{padding:3px 8px}
+  .palette-switcher select{font-size:.68rem;max-width:205px;text-overflow:ellipsis}
+}
+@media (max-width:520px){
+  .palette-switcher .palette-label{display:none}
+}
+
+/* Transiciones suaves al cambiar de modo */
+section.block,.cta-band,.card,.role,.access .grid a,.valores .ic{transition:background-color .28s ease,color .28s ease,border-color .28s ease,box-shadow .28s ease}
+
+/* ==================== OPCIÓN 1: BLOQUES AZUL & CELESTE (EQUILIBRIO CORPORATIVO) ==================== */
+/* Caja de rol en bloque azul, "¿Cómo podemos ayudarle?" en bloque Azul #19375B,
+   "Memoria viva de Lima" en bloque Celeste suave y franja final en Celeste #6CAADA */
+:root[data-palette="1"] .topbar{background:var(--verde);color:var(--azul)}
+:root[data-palette="1"] .intro .role{background:var(--azul);color:#EFEBE0;border-color:var(--azul)}
+:root[data-palette="1"] .intro .role svg,:root[data-palette="1"] .intro .role a{color:var(--celeste)}
+:root[data-palette="1"] .alt-ayuda{background:var(--azul);color:#EFEBE0}
+:root[data-palette="1"] .alt-ayuda .eyebrow{color:var(--celeste)}
+:root[data-palette="1"] .alt-ayuda h2{color:#EFEBE0}
+:root[data-palette="1"] .alt-ayuda .access .grid a{background:#EFEBE0;color:var(--azul);box-shadow:0 12px 28px rgba(8,20,36,.28)}
+:root[data-palette="1"] .alt-ayuda .access .grid a.urgent{background:var(--celeste);color:var(--azul)}
+:root[data-palette="1"] .alt-ayuda .access .grid a.urgent .k{color:var(--azul);font-weight:700}
+:root[data-palette="1"] .block-servicios .card{background:#F7F5EE;border:1px solid rgba(25,55,91,.14);box-shadow:0 8px 22px rgba(25,55,91,.06)}
+:root[data-palette="1"] .alt-memoria{background:#D6E6F4;border-top:1px solid rgba(108,170,218,.4);border-bottom:1px solid rgba(108,170,218,.4)}
+:root[data-palette="1"] .alt-memoria .eyebrow{color:var(--azul)}
+:root[data-palette="1"] .alt-memoria h2{color:var(--azul)}
+:root[data-palette="1"] .alt-memoria .lede{color:var(--azul)}
+:root[data-palette="1"] .alt-memoria .btn.primary{background:var(--azul);color:#EFEBE0}
+:root[data-palette="1"] .cta-band{background:var(--celeste);color:var(--azul)}
+:root[data-palette="1"] .cta-band h2,:root[data-palette="1"] .cta-band p{color:var(--azul)}
+:root[data-palette="1"] .cta-band .btn{background:var(--azul);color:#EFEBE0}
+
+/* ==================== OPCIÓN 2: DOBLE BLOQUE AZUL PROFUNDO (ALTO IMPACTO) ==================== */
+/* Los dos grandes bloques alternos ("¿Cómo podemos ayudarle?" y "Memoria viva de Lima")
+   son bloques completos en Azul Institucional #19375B; botones y cajas conservan acento verde salvia */
+:root[data-palette="2"] .topbar{background:var(--verde);color:var(--azul)}
+:root[data-palette="2"] .intro .role{background:var(--verde);color:var(--azul);border-color:rgba(25,55,91,.18)}
+:root[data-palette="2"] .alt-ayuda{background:var(--azul);color:#EFEBE0}
+:root[data-palette="2"] .alt-ayuda .eyebrow{color:var(--celeste)}
+:root[data-palette="2"] .alt-ayuda h2{color:#EFEBE0}
+:root[data-palette="2"] .alt-ayuda .access .grid a{background:#EFEBE0;color:var(--azul);box-shadow:0 12px 28px rgba(8,20,36,.28)}
+:root[data-palette="2"] .alt-ayuda .access .grid a.urgent{background:var(--verde);color:var(--azul)}
+:root[data-palette="2"] .alt-ayuda .access .grid a.urgent .k{color:var(--azul);font-weight:700}
+:root[data-palette="2"] .block-servicios .card{background:#F7F5EE;border:1px solid rgba(25,55,91,.16);box-shadow:0 8px 22px rgba(25,55,91,.07)}
+:root[data-palette="2"] .alt-memoria{background:var(--azul);color:#EFEBE0}
+:root[data-palette="2"] .alt-memoria .eyebrow{color:var(--celeste)}
+:root[data-palette="2"] .alt-memoria h2{color:#EFEBE0}
+:root[data-palette="2"] .alt-memoria .lede{color:#DCE5EF}
+:root[data-palette="2"] .alt-memoria .btn.primary{background:var(--celeste);color:var(--azul)}
+:root[data-palette="2"] .cta-band{background:#EFEBE0;color:var(--azul);border-top:1px solid var(--line)}
+:root[data-palette="2"] .cta-band .btn{background:var(--verde);color:var(--azul)}
+
+/* ==================== OPCIÓN 3: CELESTE LUMINOSO + BLOQUE AZUL MARINO ==================== */
+/* Barra superior celeste, 1er bloque en Celeste de marca #6CAADA con tarjeta urgente en Azul #19375B,
+   y 2do bloque completo en Azul Institucional #19375B con acentos en Verde Salvia */
+:root[data-palette="3"] .topbar{background:var(--celeste);color:var(--azul)}
+:root[data-palette="3"] .intro .role{background:var(--azul);color:#EFEBE0;border-color:var(--azul)}
+:root[data-palette="3"] .intro .role svg,:root[data-palette="3"] .intro .role a{color:var(--celeste)}
+:root[data-palette="3"] .alt-ayuda{background:var(--celeste);color:var(--azul)}
+:root[data-palette="3"] .alt-ayuda .eyebrow{color:var(--azul);font-weight:600}
+:root[data-palette="3"] .alt-ayuda h2{color:var(--azul)}
+:root[data-palette="3"] .alt-ayuda .access .grid a{background:#EFEBE0;color:var(--azul);box-shadow:0 10px 24px rgba(25,55,91,.16)}
+:root[data-palette="3"] .alt-ayuda .access .grid a.urgent{background:var(--azul);color:#EFEBE0}
+:root[data-palette="3"] .alt-ayuda .access .grid a.urgent .k{color:var(--celeste)}
+:root[data-palette="3"] .block-servicios .card{background:#F7F5EE;border:1.5px solid rgba(108,170,218,.45)}
+:root[data-palette="3"] .alt-memoria{background:var(--azul);color:#EFEBE0}
+:root[data-palette="3"] .alt-memoria .eyebrow{color:var(--verde)}
+:root[data-palette="3"] .alt-memoria h2{color:#EFEBE0}
+:root[data-palette="3"] .alt-memoria .lede{color:#DCE5EF}
+:root[data-palette="3"] .alt-memoria .btn.primary{background:var(--verde);color:var(--azul)}
+:root[data-palette="3"] .cta-band{background:#D6E6F4;color:var(--azul)}
+:root[data-palette="3"] .cta-band .btn{background:var(--azul);color:#EFEBE0}
+
+/* ==================== OPCIÓN 4: TARJETAS AZULES & SECCIONES CLARAS (EDITORIAL) ==================== */
+/* El Azul #19375B y Celeste #6CAADA visten las cajas y tarjetas (Servicios, Accesos, Valores, Rol)
+   y el bloque de Memoria viva de Lima, dejando fondos amplios y luminosos */
+:root[data-palette="4"] .topbar{background:#112640;color:#EFEBE0}
+:root[data-palette="4"] .topbar .dot{background:var(--verde)}
+:root[data-palette="4"] .topbar .palette-switcher{background:rgba(239,235,224,.12);border-color:rgba(108,170,218,.5)}
+:root[data-palette="4"] .intro .valores .ic{background:var(--azul);color:var(--celeste)}
+:root[data-palette="4"] .intro .valores div:nth-child(even) .ic{background:var(--azul);color:var(--verde)}
+:root[data-palette="4"] .intro .role{background:var(--azul);color:#EFEBE0;border-left:5px solid var(--verde)}
+:root[data-palette="4"] .intro .role svg,:root[data-palette="4"] .intro .role a{color:var(--verde)}
+:root[data-palette="4"] .alt-ayuda{background:#DCE8F2}
+:root[data-palette="4"] .alt-ayuda .access .grid a{background:var(--celeste);color:var(--azul)}
+:root[data-palette="4"] .alt-ayuda .access .grid a .k{color:var(--azul);font-weight:600}
+:root[data-palette="4"] .alt-ayuda .access .grid a.urgent{background:var(--azul);color:#EFEBE0}
+:root[data-palette="4"] .alt-ayuda .access .grid a.urgent .k{color:var(--verde)}
+:root[data-palette="4"] .block-servicios .card{background:var(--azul);color:#EFEBE0;box-shadow:0 12px 26px rgba(25,55,91,.18)}
+:root[data-palette="4"] .block-servicios .card h3{color:#EFEBE0}
+:root[data-palette="4"] .block-servicios .card .foot{border-top-color:rgba(239,235,224,.2)}
+:root[data-palette="4"] .block-servicios .card .foot .go{color:var(--celeste)}
+:root[data-palette="4"] .alt-memoria{background:var(--azul);color:#EFEBE0}
+:root[data-palette="4"] .alt-memoria .eyebrow{color:var(--celeste)}
+:root[data-palette="4"] .alt-memoria h2{color:#EFEBE0}
+:root[data-palette="4"] .alt-memoria .lede{color:#DCE5EF}
+:root[data-palette="4"] .alt-memoria .btn.primary{background:var(--celeste);color:var(--azul)}
+:root[data-palette="4"] .cta-band{background:#EFEBE0;color:var(--azul)}
+:root[data-palette="4"] .cta-band .btn{background:var(--azul);color:#EFEBE0}
+
+/* ==================== OPCIÓN 5: BLOQUE AZUL + BLOQUE VERDE SALVIA (MIXTO) ==================== */
+/* 1er gran bloque ("¿Cómo podemos ayudarle?") en Azul Institucional #19375B,
+   2do bloque ("Memoria viva de Lima") en Verde Salvia #AFD4B2 y cierre en Celeste #6CAADA */
+:root[data-palette="5"] .topbar{background:var(--celeste);color:var(--azul)}
+:root[data-palette="5"] .intro .role{background:var(--azul);color:#EFEBE0;border-color:var(--azul)}
+:root[data-palette="5"] .intro .role svg,:root[data-palette="5"] .intro .role a{color:var(--verde)}
+:root[data-palette="5"] .alt-ayuda{background:var(--azul);color:#EFEBE0}
+:root[data-palette="5"] .alt-ayuda .eyebrow{color:var(--celeste)}
+:root[data-palette="5"] .alt-ayuda h2{color:#EFEBE0}
+:root[data-palette="5"] .alt-ayuda .access .grid a{background:#EFEBE0;color:var(--azul);box-shadow:0 12px 28px rgba(8,20,36,.28)}
+:root[data-palette="5"] .alt-ayuda .access .grid a.urgent{background:var(--celeste);color:var(--azul)}
+:root[data-palette="5"] .alt-ayuda .access .grid a.urgent .k{color:var(--azul);font-weight:700}
+:root[data-palette="5"] .block-servicios .card{background:#F7F5EE;border-top:4px solid var(--azul);box-shadow:0 8px 22px rgba(25,55,91,.08)}
+:root[data-palette="5"] .alt-memoria{background:var(--verde);color:var(--azul)}
+:root[data-palette="5"] .alt-memoria .eyebrow,:root[data-palette="5"] .alt-memoria h2,:root[data-palette="5"] .alt-memoria .lede{color:var(--azul)}
+:root[data-palette="5"] .alt-memoria .btn.primary{background:var(--azul);color:#EFEBE0}
+:root[data-palette="5"] .cta-band{background:var(--celeste);color:var(--azul)}
+:root[data-palette="5"] .cta-band h2,:root[data-palette="5"] .cta-band p{color:var(--azul)}
+:root[data-palette="5"] .cta-band .btn{background:var(--azul);color:#EFEBE0}
 </style>
 </head>
 <body>
@@ -590,6 +721,16 @@ header.site .burger{color:#EFEBE0;border-color:rgba(239,235,224,.45)}
         <div class="soon">Agenda de citas y visitas <em>Próximamente</em></div>
       </div>
     </div>
+      <div class="palette-switcher" title="Cambiar propuesta de diseño de colores">
+        <label for="paletteSelect" class="palette-label">🎨 Diseño:</label>
+        <select id="paletteSelect" aria-label="Seleccionar diseño de colores">
+          <option value="1">Opción 1 · Bloques Azul &amp; Celeste (Equilibrio)</option>
+          <option value="2">Opción 2 · Doble Bloque Azul Profundo</option>
+          <option value="3">Opción 3 · Celeste Luminoso + Bloque Azul</option>
+          <option value="4">Opción 4 · Tarjetas Azules &amp; Secciones Claras</option>
+          <option value="5">Opción 5 · Bloque Azul + Bloque Verde Salvia</option>
+        </select>
+      </div>
     </span>
   </div>
 </div>
@@ -660,7 +801,7 @@ header.site .burger{color:#EFEBE0;border-color:rgba(239,235,224,.45)}
     </div>
   </section>
 
-  <section class="block alt">
+  <section class="block alt alt-ayuda">
     <div class="wrap">
       <div class="head-row">
         <div><p class="eyebrow">Atención a familias</p><h2>¿Cómo podemos ayudarle?</h2></div>
@@ -688,7 +829,7 @@ header.site .burger{color:#EFEBE0;border-color:rgba(239,235,224,.45)}
     </div>
   </section>
 
-  <section class="block">
+  <section class="block block-servicios">
     <div class="wrap">
       <div class="head-row">
         <div><p class="eyebrow">Servicios</p><h2>Nuestros servicios</h2></div>
@@ -705,7 +846,7 @@ header.site .burger{color:#EFEBE0;border-color:rgba(239,235,224,.45)}
 
 
 
-  <section class="block alt">
+  <section class="block alt alt-memoria">
     <div class="wrap two">
       <div>
         <div class="figure"><img class="pos-capilla" src="img/foto-capilla.jpg" alt="Capilla del Cementerio Del Ángel" loading="lazy"><figcaption>Foto: archivo SERENITY</figcaption></div>
@@ -1293,6 +1434,18 @@ header.site .burger{color:#EFEBE0;border-color:rgba(239,235,224,.45)}
     var aviso=env && document.getElementById('sent-'+env);
     if(aviso){ aviso.hidden=false; history.replaceState(null,'',location.pathname+location.hash); setTimeout(function(){ aviso.scrollIntoView({block:'center'}); },400); }
   }catch(e){}
+
+  // Selector interactivo de 5 modos de diseño de colores (esquina superior derecha)
+  var ps=document.getElementById('paletteSelect');
+  if(ps){
+    var curMode=document.documentElement.getAttribute('data-palette')||'1';
+    ps.value=curMode;
+    ps.addEventListener('change',function(){
+      var val=ps.value;
+      document.documentElement.setAttribute('data-palette',val);
+      try{localStorage.setItem('serenity_palette',val);}catch(e){}
+    });
+  }
 
   // Contacto: cada opción de «¿Qué necesita?» llega al correo del área que la atiende
   var qf=document.getElementById('quote');
