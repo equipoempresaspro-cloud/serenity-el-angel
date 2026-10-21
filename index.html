@@ -620,7 +620,7 @@ dl.facts{background:#DCE8F2;border:1px solid #C2D4E4;border-radius:18px;padding:
 #mision>.stack:last-child h2{color:var(--azul)}
 #mision>.stack:last-child .muted{color:var(--ink)}
 
-/* 8. Subpágina Contacto (#contacto) y Aspectos legales (#legal) */
+/* 8. Subpágina Contacto (#contacto), Aspectos legales (#legal) y Libro de reclamaciones (#reclamaciones) */
 dl.channels{background:#DCE8F2;border:1px solid #C2D4E4;border-radius:22px;padding:8px 24px}
 form.quote{background:var(--azul);color:#EFEBE0;border-color:var(--azul);border-top:5px solid var(--celeste);box-shadow:0 16px 34px rgba(25,55,91,.18)}
 form.quote label,form.quote .seg legend{color:#EFEBE0}
@@ -632,6 +632,10 @@ form.quote .check{color:#DCE5EF}
 #legal .content>section:first-child{background:var(--azul);color:#EFEBE0;border-color:var(--azul);border-left:5px solid var(--verde);margin-top:0}
 #legal .content>section:first-child h2{color:var(--celeste)}
 #legal .content>section:first-child .muted{color:#DCE5EF}
+.reclamos-layout{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:36px;align-items:start}
+.form-sec-title{font-family:var(--display);font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--celeste);padding-top:10px;border-top:1px solid rgba(239,235,224,.18)}
+.reclamo-form .form-sec-title:first-of-type{padding-top:0;border-top:0}
+@media (max-width:960px){.reclamos-layout{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -1306,7 +1310,113 @@ form.quote .check{color:#DCE5EF}
       <section id="privacidad" class="stack"><h2>Política de privacidad</h2><p class="muted">Texto por redactar con el área legal.</p></section>
       <section id="cookies" class="stack"><h2>Política de cookies</h2><p class="muted">Texto por redactar con el área legal.</p></section>
       <section id="terminos" class="stack"><h2>Términos y condiciones</h2><p class="muted">Texto por redactar con el área legal.</p></section>
-      <section id="reclamaciones" class="stack"><h2>Libro de reclamaciones</h2><p class="muted">Aquí se integrará el formulario del libro de reclamaciones virtual.</p></section>
+      <section id="reclamaciones-legal" class="stack">
+        <h2>Libro de reclamaciones</h2>
+        <p class="muted">Conforme al Código de Protección y Defensa del Consumidor, contamos con un Libro de Reclamaciones virtual a disposición de todas las familias y usuarios.</p>
+        <div class="callrow"><a class="btn primary" href="#reclamaciones">Abrir Libro de Reclamaciones virtual</a></div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- =================== LIBRO DE RECLAMACIONES =================== -->
+<div class="page" id="reclamaciones" data-page="reclamaciones" data-title="Libro de reclamaciones" hidden>
+  <section class="phero">
+    <div class="slides">
+      <figure class="slide on"><img src="img/plaza.jpg" alt="Explanada de ingreso al Cementerio Del Ángel" loading="lazy"><figcaption>Foto: Fmurillo26 · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure>
+      <figure class="slide"><img src="img/hero-1.jpg" alt="Pabellón interior del Cementerio Del Ángel" loading="lazy"><figcaption>Foto: Wasiwatana · CC BY-SA 4.0 · Wikimedia Commons</figcaption></figure>
+    </div>
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--celeste)">Atención al usuario · INDECOPI</p>
+      <h1>Libro de reclamaciones</h1>
+      <p>Conforme a lo establecido en el Código de Protección y Defensa del Consumidor (Ley N.° 29571), ponemos a su disposición nuestra Hoja de Reclamación virtual.</p>
+    </div>
+  </section>
+  <nav class="crumbs" aria-label="Ruta"><div class="wrap"><ol><li><a href="#inicio">Inicio</a></li><li aria-current="page">Libro de reclamaciones</li></ol></div></nav>
+  <div class="wrap" style="padding-block:48px 88px">
+    <div class="reclamos-layout">
+      <div class="stack">
+        <div class="box">
+          <h3>Datos del proveedor</h3>
+          <ul>
+            <li><strong>Operador:</strong> SERENITY (en el marco del contrato con la Sociedad de Beneficencia de Lima Metropolitana)</li>
+            <li><strong>Sede / Cementerio:</strong> Cementerio Del Ángel · Jr. Áncash cuadra 17, Lima</li>
+            <li><strong>Oficina de atención:</strong> Jr. Áncash 1692, El Agustino, Lima</li>
+            <li><strong>Área responsable:</strong> Mesa de partes (<a class="link-celeste" href="mailto:mesadepartes@serenityasociados.com">mesadepartes@serenityasociados.com</a> · +51 912 610 585)</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>Diferencia entre Reclamo y Queja</h3>
+          <ul>
+            <li><strong>Reclamo:</strong> Disconformidad relacionada directamente con los productos o servicios prestados.</li>
+            <li><strong>Queja:</strong> Disconformidad no relacionada a los productos o servicios; o malestar o descontento respecto a la atención al público.</li>
+          </ul>
+          <h4>Plazo legal de atención</h4>
+          <small>El proveedor dará respuesta a su hoja de reclamación en un plazo no mayor a quince (15) días hábiles, el cual es improrrogable. La formulación del reclamo no impide acudir a otras vías de solución de controversias ni es requisito previo para interponer una denuncia ante el INDECOPI.</small>
+        </div>
+      </div>
+
+      <!-- Formulario del Libro de Reclamaciones enviado a Mesa de partes -->
+      <form class="quote reclamo-form" id="rform" action="https://formsubmit.co/mesadepartes@serenityasociados.com" method="POST">
+        <input type="hidden" name="_subject" value="Hoja de Reclamación [Reclamo] · web SERENITY">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://equipoempresaspro-cloud.github.io/serenity-el-angel/?enviado=reclamo#reclamaciones">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="full form-sec-title">1. Identificación del consumidor reclamante</div>
+        <label class="full">Nombres y apellidos completos<input name="consumidor_nombre" autocomplete="name" required></label>
+        <label>Tipo de documento
+          <select name="documento_tipo" required>
+            <option value="DNI">DNI</option>
+            <option value="Carné de extranjería">Carné de extranjería</option>
+            <option value="Pasaporte">Pasaporte</option>
+            <option value="RUC">RUC</option>
+          </select>
+        </label>
+        <label>Número de documento<input name="documento_numero" required></label>
+        <label>Teléfono o WhatsApp<input name="consumidor_telefono" type="tel" autocomplete="tel" required></label>
+        <label>Correo electrónico<input name="email" type="email" autocomplete="email" required></label>
+        <label class="full">Domicilio / Dirección<input name="consumidor_domicilio" autocomplete="street-address" required></label>
+        <label class="full">Nombre del padre, madre o apoderado (solo si el reclamante es menor de edad)<input name="apoderado_menor" placeholder="Opcional"></label>
+
+        <div class="full form-sec-title">2. Identificación del bien contratado</div>
+        <fieldset class="seg full">
+          <legend>Tipo de bien</legend>
+          <label><input type="radio" name="bien_tipo" value="Servicio" checked><span>Servicio</span></label>
+          <label><input type="radio" name="bien_tipo" value="Producto"><span>Producto</span></label>
+        </fieldset>
+        <label>Servicio o área relacionada
+          <select name="servicio_relacionado">
+            <option>Trámites documentarios / Mesa de partes</option>
+            <option>Autorizaciones para ornamentos funerarios</option>
+            <option>Nicho</option>
+            <option>Mausoleo tumba</option>
+            <option>Mausoleo capilla</option>
+            <option>Columbarios</option>
+            <option>Cremación</option>
+            <option>Exhumaciones y traslados</option>
+            <option>Atención en el cementerio / Otro</option>
+          </select>
+        </label>
+        <label>Monto reclamado en S/ (opcional)<input name="monto_reclamado" type="number" step="0.01" min="0" placeholder="0.00"></label>
+        <label class="full">Descripción del servicio o producto<input name="descripcion_bien" placeholder="Ej. Trámite de constancia de inhumación, atención en oficina, etc." required></label>
+
+        <div class="full form-sec-title">3. Detalle de la reclamación y pedido del consumidor</div>
+        <fieldset class="seg full">
+          <legend>Tipo de presentación</legend>
+          <label><input type="radio" name="tipo_reclamacion" value="Reclamo" checked><span>Reclamo</span></label>
+          <label><input type="radio" name="tipo_reclamacion" value="Queja"><span>Queja</span></label>
+        </fieldset>
+        <label class="full">Detalle del reclamo o queja<textarea name="detalle_reclamacion" placeholder="Describa de manera clara los hechos ocurridos, fechas y detalles relevantes..." required></textarea></label>
+        <label class="full">Pedido concreto del consumidor<textarea name="pedido_consumidor" placeholder="Indique qué solución o medida solicita respecto a su reclamo o queja..." required></textarea></label>
+
+        <label class="check full"><input type="checkbox" name="declara_veracidad" value="Sí" required> Declaro que los datos consignados son verdaderos y acepto la política de privacidad para el registro, trámite y respuesta de esta Hoja de Reclamación por parte de Mesa de partes de SERENITY.</label>
+        <div class="full callrow" style="margin-top:4px">
+          <button class="btn primary" type="submit">Enviar hoja de reclamación</button>
+        </div>
+        <p class="sent" id="sent-reclamo" role="status" hidden>Su Hoja de Reclamación ha sido enviada a Mesa de partes (mesadepartes@serenityasociados.com). Le daremos respuesta dentro del plazo de ley.</p>
+      </form>
     </div>
   </div>
 </div>
@@ -1436,6 +1546,22 @@ form.quote .check{color:#DCE5EF}
     [].forEach.call(qf.querySelectorAll('input[name="tipo"]'),function(r){ r.addEventListener('change',fijar); });
     qf.addEventListener('submit',fijar);
     fijar();
+  }
+
+  // Libro de reclamaciones: se envía a mesadepartes@serenityasociados.com con asunto dinámico (Reclamo / Queja)
+  var rf=document.getElementById('rform');
+  if(rf){
+    var fijarReclamo=function(){
+      var tr=rf.querySelector('input[name="tipo_reclamacion"]:checked');
+      var tipoVal=tr?tr.value:'Reclamo';
+      var nom=rf.elements['consumidor_nombre']?rf.elements['consumidor_nombre'].value.trim():'';
+      var sub=rf.querySelector('input[name="_subject"]');
+      if(sub) sub.value='Hoja de Reclamación ['+tipoVal+']'+(nom?' - '+nom:'')+' · web SERENITY';
+    };
+    [].forEach.call(rf.querySelectorAll('input[name="tipo_reclamacion"]'),function(r){ r.addEventListener('change',fijarReclamo); });
+    if(rf.elements['consumidor_nombre']) rf.elements['consumidor_nombre'].addEventListener('input',fijarReclamo);
+    rf.addEventListener('submit',fijarReclamo);
+    fijarReclamo();
   }
 
   // Verificación de datos: el formulario se envía por correo (FormSubmit); este botón la manda por WhatsApp
