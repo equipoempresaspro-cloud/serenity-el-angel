@@ -637,6 +637,9 @@ form.quote .check{color:#DCE5EF}
 .form-sec-title{font-family:var(--display);font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--celeste);padding-top:10px;border-top:1px solid rgba(239,235,224,.18)}
 .reclamo-form .form-sec-title:first-of-type{padding-top:0;border-top:0}
 @media (max-width:960px){.reclamos-layout{grid-template-columns:1fr}}
+.box.normas-box{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(200px,260px);gap:28px;align-items:center}
+.normas-fig{aspect-ratio:1/1;border-radius:18px;overflow:hidden;margin:0}
+@media (max-width:760px){.box.normas-box{grid-template-columns:1fr}.normas-fig{max-width:300px}}
 </style>
 </head>
 <body>
@@ -1150,14 +1153,20 @@ form.quote .check{color:#DCE5EF}
       </section>
       <section id="normas">
         <h2>Normas de visita</h2>
-        <div class="box">
-          <ul>
-            <li>Respete los horarios de visita y las indicaciones del personal.</li>
-            <li>Cuide los espacios de otras familias y el patrimonio del cementerio.</li>
-            <li>Consulte en la oficina antes de realizar trabajos o colocar objetos.</li>
-            <li><strong>Solo flores artificiales.</strong></li>
-          </ul>
-          <small>Texto referencial. Las normas completas se publicarán tras su validación.</small>
+        <div class="box normas-box">
+          <div>
+            <ul>
+              <li>Respete los horarios de visita y las indicaciones del personal.</li>
+              <li>Cuide los espacios de otras familias y el patrimonio del cementerio.</li>
+              <li>Consulte en la oficina antes de realizar trabajos o colocar objetos.</li>
+              <li><strong>Solo flores artificiales.</strong></li>
+            </ul>
+            <small>Texto referencial. Las normas completas se publicarán tras su validación.</small>
+          </div>
+          <figure class="figure normas-fig">
+            <img src="img/flores-artificiales.jpg" alt="Uso exclusivo de flores artificiales en los nichos del Cementerio Del Ángel" loading="lazy">
+            <figcaption>Uso exclusivo de flores artificiales</figcaption>
+          </figure>
         </div>
       </section>
       <section id="ubicacion">
