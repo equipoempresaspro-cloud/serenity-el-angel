@@ -640,6 +640,10 @@ form.quote .check{color:#DCE5EF}
 .box.normas-box{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(200px,260px);gap:28px;align-items:center}
 .normas-fig{aspect-ratio:1/1;border-radius:18px;overflow:hidden;margin:0}
 @media (max-width:760px){.box.normas-box{grid-template-columns:1fr}.normas-fig{max-width:300px}}
+.gallery.g3.eventos-grid img{aspect-ratio:4/3}
+.gallery.g3.eventos-grid figcaption{margin-top:8px;font-size:.88rem;color:var(--ink-soft);line-height:1.35}
+.gallery.g3.eventos-grid figcaption b{display:block;color:var(--heading);font-weight:600}
+@media (max-width:760px){.gallery.g3.eventos-grid{grid-template-columns:1fr;gap:18px}}
 </style>
 </head>
 <body>
@@ -1132,11 +1136,10 @@ form.quote .check{color:#DCE5EF}
           <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Museo a cielo abierto</strong>Arquitectura, arte e historia que hacen del Cementerio Del Ángel un patrimonio de Lima y del Perú.</p></div>
           <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Recorridos nocturnos</strong>Visitas guiadas de noche. Fechas e inscripción por confirmar.</p></div>
         </div>
-        <div class="gallery g2" style="margin-top:8px">
+        <div class="gallery g3 eventos-grid" style="margin-top:8px">
           <figure><img src="img/evento-1.jpg" alt="Homenaje institucional y acompañamiento musical en el Cementerio Del Ángel" loading="lazy" style="object-position:50% 55%"><figcaption><b>Homenajes y acompañamiento musical</b>Ceremonias conmemorativas junto a los pabellones</figcaption></figure>
           <figure><img src="img/evento-2.jpg" alt="Romería y homenaje conmemorativo en el Cementerio Del Ángel" loading="lazy" style="object-position:50% 45%"><figcaption><b>Romerías y conmemoraciones</b>Encuentros de memoria frente a sepulturas históricas</figcaption></figure>
           <figure><img src="img/evento-3.jpg" alt="Danzas tradicionales peruanas en las alamedas del Cementerio Del Ángel" loading="lazy" style="object-position:50% 68%"><figcaption><b>Tradición y cultura viva</b>Presentaciones de danzas tradicionales en nuestras alamedas</figcaption></figure>
-          <figure><img src="img/evento-4.jpg" alt="Cuidado y mantenimiento permanente de los pabellones del Cementerio Del Ángel" loading="lazy"><figcaption><b>Espacios cuidados para las visitas</b>Mantenimiento y puesta en valor de los pabellones</figcaption></figure>
         </div>
       </section>
       <section id="gestion" class="stack">
@@ -1243,7 +1246,7 @@ form.quote .check{color:#DCE5EF}
       </section>
       <section id="compromisos">
         <h2>Compromisos de mejora</h2>
-        <!-- Pendiente: foto para «Compromisos de mejora» -->
+        <div class="figure" style="margin-bottom:24px"><img src="img/evento-4.jpg" alt="Mantenimiento y renovación de pabellones en el Cementerio Del Ángel" loading="lazy"><figcaption>Mantenimiento y recuperación progresiva de los pabellones del Cementerio Del Ángel</figcaption></div>
         <div class="benefits">
           <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Reinversión verificable</strong>Publicaremos los avances con fotografías y fechas.</p></div>
           <div class="benefit"><svg aria-hidden="true"><use href="#i-check"/></svg><p><strong>Respeto por el patrimonio</strong>Cada mejora cuida el valor histórico del lugar.</p></div>
