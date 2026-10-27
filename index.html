@@ -611,6 +611,25 @@ dl.facts{background:#DCE8F2;border:1px solid #C2D4E4;border-radius:18px;padding:
 .articles .article .k{color:var(--celeste);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem}
 .articles .article:nth-child(even) .k{color:var(--verde)}
 .articles .article h3{color:#EFEBE0}
+/* Tarjetas de Memoria y orientación: toda la tarjeta abre el artículo */
+.articles .article{position:relative;transition:transform .2s ease,box-shadow .2s ease}
+.articles .article h3 a{color:inherit;text-decoration:none}
+.articles .article h3 a::after{content:"";position:absolute;inset:0;border-radius:22px}
+.articles .article:hover{transform:translateY(-3px);box-shadow:0 16px 30px rgba(25,55,91,.22)}
+.articles .article:focus-within{outline:2px solid var(--celeste);outline-offset:3px}
+.articles .article .leer{padding-inline:20px;margin-top:auto;color:var(--celeste);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem}
+.articles .article:nth-child(even) .leer{color:var(--verde)}
+/* Páginas de lectura de los artículos */
+.sidenav a[aria-current="page"]{font-weight:600;color:var(--azul)}
+.lectura{max-width:70ch}
+.lectura .lead{font-size:1.08rem;margin-bottom:8px}
+.lectura h3{margin:30px 0 10px;font-size:1.15rem;color:var(--azul)}
+.lectura p,.lectura li{line-height:1.7}
+.lectura ul,.lectura ol{padding-left:1.25em;margin:6px 0 12px}
+.lectura li{margin:6px 0}
+.lectura a:not(.btn){color:var(--link,var(--azul));text-decoration:underline;text-underline-offset:2px}
+.lectura .nota{margin-top:30px;padding:14px 18px;border-left:4px solid var(--celeste);background:var(--surface-2);border-radius:0 14px 14px 0;font-size:.9rem;color:var(--ink-soft)}
+.lectura .callrow{margin-top:24px}
 .articles .article p{color:#DCE5EF}
 
 /* 7. Subpágina Nosotros (#nosotros): bloques de Misión y Visión */
@@ -900,7 +919,7 @@ form.quote .check{color:#DCE5EF}
         <div class="box" id="tramites-documentarios">
           <h3>Trámites documentarios</h3>
           <ul>
-            <li><a class="link-celeste" href="#busquedas">Verificación de datos</a> <span class="muted">· 100 % virtual</span></li>
+            <li><a class="link-celeste" href="#busquedas">Verificación de datos</a> <span class="muted">· 100 % virtual · S/&nbsp;10</span></li>
             <li>Duplicado de título de nicho</li>
             <li>Duplicado de título de tumba, mausoleo y capilla</li>
             <li>Duplicado de título de parvulario o columbario</li>
@@ -927,12 +946,11 @@ form.quote .check{color:#DCE5EF}
       </section>
       <section id="busquedas">
         <h2>Verificación de datos</h2>
-        <p class="muted">Se realiza 100 % de manera virtual, sin ir al cementerio. Complete el formulario con el nombre del difunto, su fecha de nacimiento y de fallecimiento, y sus datos como solicitante. Puede enviarlo por correo o por WhatsApp.</p>
+        <p class="muted">Se realiza 100 % de manera virtual, sin ir al cementerio. Complete el formulario con el nombre del difunto, su fecha de fallecimiento y sus datos como solicitante. Puede enviarlo por correo o por WhatsApp. <strong>Costo del servicio: S/&nbsp;10.</strong></p>
         <!-- Envío con FormSubmit a Mesa de partes (el primer envío pide activar el correo desde la bandeja de mesadepartes@) -->
         <form class="bform" id="bform" action="https://formsubmit.co/mesadepartes@serenityasociados.com" method="POST">
           <input type="hidden" name="_subject" value="Solicitud de verificación de datos · web SERENITY"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" value="https://equipoempresaspro-cloud.github.io/serenity-el-angel/?enviado=busqueda#busquedas"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <label class="full">Nombres y apellidos del difunto<input name="difunto" required></label>
-          <label>Fecha de nacimiento<input name="nacimiento" type="date" required></label>
+          <label>Nombres y apellidos del difunto<input name="difunto" required></label>
           <label>Fecha de fallecimiento<input name="fecha" type="date" required></label>
           <label>Nombre y apellido del solicitante<input name="solicitante" autocomplete="name" required></label>
           <label>Número de teléfono<input name="telefono" type="tel" autocomplete="tel" required></label>
@@ -1200,17 +1218,264 @@ form.quote .check{color:#DCE5EF}
     <nav class="sidenav" aria-label="Categorías"><p>Categorías</p><a href="#duelo">Duelo</a><a href="#prevision-guia">Previsión</a><a href="#homenajes">Homenajes</a></nav>
     <div class="content">
       <section id="duelo"><h2>Duelo</h2><div class="articles">
-        <article class="article"><div class="thumb"><img src="img/escultura-8.jpg" alt="" loading="lazy"></div><span class="k">4 min de lectura</span><h3>Los primeros días: qué hacer y qué puede esperar</h3><p>Una guía práctica para ordenar los pendientes.</p></article>
-        <article class="article"><div class="thumb"><img src="img/evento-2.jpg" alt="" loading="lazy"></div><span class="k">5 min de lectura</span><h3>Acompañar a niños y adultos mayores</h3><p>Ideas sencillas para conversar y estar presentes.</p></article>
+        <article class="article"><div class="thumb"><img src="img/art-primeros-dias.jpg" alt="" loading="lazy"></div><span class="k">4 min de lectura</span><h3><a href="#art-primeros-dias">Los primeros días: qué hacer y qué puede esperar</a></h3><p>Una guía práctica para ordenar los pendientes.</p><span class="leer" aria-hidden="true">Leer artículo →</span></article>
+        <article class="article"><div class="thumb"><img src="img/art-ninos-mayores.jpg" alt="" loading="lazy"></div><span class="k">5 min de lectura</span><h3><a href="#art-ninos-mayores">Acompañar a niños y adultos mayores</a></h3><p>Ideas sencillas para conversar y estar presentes.</p><span class="leer" aria-hidden="true">Leer artículo →</span></article>
       </div></section>
       <section id="prevision-guia"><h2>Previsión</h2><div class="articles">
-        <article class="article"><div class="thumb"><img src="img/foto-nichos.jpg" alt="" loading="lazy"></div><span class="k">4 min de lectura</span><h3>Qué conviene saber antes de elegir un espacio</h3><p>Diferencias entre nicho, tumba, mausoleo y columbario.</p></article>
-        <article class="article"><div class="thumb"><img src="img/foto-mausoleo-capilla.jpg" alt="" loading="lazy"></div><span class="k">3 min de lectura</span><h3>Cómo hablar de previsión en familia</h3><p>Una conversación que evita decisiones apresuradas.</p></article>
+        <article class="article"><div class="thumb"><img src="img/art-elegir-espacio.jpg" alt="" loading="lazy"></div><span class="k">4 min de lectura</span><h3><a href="#art-elegir-espacio">Qué conviene saber antes de elegir un espacio</a></h3><p>Diferencias entre nicho, tumba, mausoleo y columbario.</p><span class="leer" aria-hidden="true">Leer artículo →</span></article>
+        <article class="article"><div class="thumb"><img src="img/art-hablar-familia.jpg" alt="" loading="lazy"></div><span class="k">3 min de lectura</span><h3><a href="#art-hablar-familia">Cómo hablar de previsión en familia</a></h3><p>Una conversación que evita decisiones apresuradas.</p><span class="leer" aria-hidden="true">Leer artículo →</span></article>
       </div></section>
       <section id="homenajes"><h2>Homenajes</h2><div class="articles">
-        <article class="article"><div class="thumb"><img src="img/flores-artificiales.jpg" alt="" loading="lazy"></div><span class="k">5 min de lectura</span><h3>Ideas para recordar a un ser querido</h3><p>Fechas, visitas y pequeños gestos.</p></article>
-        <article class="article"><div class="thumb"><img src="img/evento-4.jpg" alt="" loading="lazy"></div><span class="k">3 min de lectura</span><h3>Cuidar un espacio de memoria</h3><p>Mantenimiento, flores y recomendaciones.</p></article>
+        <article class="article"><div class="thumb"><img src="img/art-recordar.jpg" alt="" loading="lazy"></div><span class="k">5 min de lectura</span><h3><a href="#art-recordar">Ideas para recordar a un ser querido</a></h3><p>Fechas, visitas y pequeños gestos.</p><span class="leer" aria-hidden="true">Leer artículo →</span></article>
+        <article class="article"><div class="thumb"><img src="img/art-cuidar-espacio.jpg" alt="" loading="lazy"></div><span class="k">3 min de lectura</span><h3><a href="#art-cuidar-espacio">Cuidar un espacio de memoria</a></h3><p>Mantenimiento, flores y recomendaciones.</p><span class="leer" aria-hidden="true">Leer artículo →</span></article>
       </div></section>
+    </div>
+  </div>
+</div>
+
+<!-- =================== ARTÍCULO: LOS PRIMEROS DÍAS =================== -->
+<div class="page" id="art-primeros-dias" data-page="orientacion" data-title="Los primeros días · Memoria y orientación" hidden>
+  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/art-primeros-dias.jpg" alt="Dos personas se toman de las manos sobre una mesa en señal de apoyo" loading="lazy"><figcaption>Foto: Unsplash</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Duelo · 4 min de lectura</p><h1>Los primeros días: qué hacer y qué puede esperar</h1><p>Una guía práctica para ordenar los pendientes.</p></div></section>
+  <nav class="crumbs" aria-label="Ruta"><div class="wrap"><ol><li><a href="#inicio">Inicio</a></li><li><a href="#orientacion">Memoria y orientación</a></li><li aria-current="page">Los primeros días</li></ol></div></nav>
+  <div class="wrap sidecols">
+    <nav class="sidenav" aria-label="Artículos"><p>Artículos</p><a href="#art-primeros-dias" aria-current="page">Los primeros días</a><a href="#art-ninos-mayores">Niños y adultos mayores</a><a href="#art-elegir-espacio">Elegir un espacio</a><a href="#art-hablar-familia">Hablar en familia</a><a href="#art-recordar">Recordar a un ser querido</a><a href="#art-cuidar-espacio">Cuidar un espacio de memoria</a></nav>
+    <div class="content">
+      <article class="lectura">
+<p class="lead">Cuando fallece un ser querido, las primeras horas suelen sentirse confusas. Hay decisiones que no pueden esperar y otras que sí. Esta guía le ayuda a distinguirlas para avanzar paso a paso, sin cargar con todo a la vez.</p>
+<h3>En las primeras horas</h3>
+<ul>
+  <li><strong>Certificado de defunción.</strong> Lo emite el médico que constata el fallecimiento, en el hospital, la clínica o el domicilio. Es el primer documento que necesitará para todo lo demás.</li>
+  <li><strong>Si el fallecimiento fue repentino o por una causa no natural</strong> (accidente, violencia o sin atención médica previa), comuníquese con la comisaría más cercana. Intervendrán la Policía y la Fiscalía, y el cuerpo puede ser trasladado a la Morgue antes de entregarse a la familia.</li>
+  <li><strong>Avise a las personas más cercanas</strong> y pida a una o dos de ellas que le ayuden con llamadas y gestiones. Delegar no es descuidar.</li>
+</ul>
+<h3>Durante el primer y segundo día</h3>
+<ol>
+  <li><strong>Inscriba la defunción</strong> en RENIEC o en la oficina de registro civil de la municipalidad. Necesitará el certificado de defunción y el DNI de quien hace el trámite. Con la inscripción se obtiene el <em>acta de defunción</em>, indispensable para sepultar o cremar.</li>
+  <li><strong>Elija el servicio funerario</strong> y acuerde el velatorio: lugar, horario, traslado y ceremonia religiosa si la familia lo desea.</li>
+  <li><strong>Coordine con el cementerio</strong> el espacio, la fecha y la hora del sepelio o la cremación. Tenga a mano el acta de defunción y el DNI del solicitante. Si la familia ya tiene un espacio, lleve también el título correspondiente.</li>
+  <li><strong>Guarde todas las boletas y facturas</strong> a nombre de quien paga. Las necesitará para solicitar reembolsos.</li>
+</ol>
+<h3>En las semanas siguientes</h3>
+<ul>
+  <li><strong>Prestación por sepelio de EsSalud.</strong> Si la persona fallecida era asegurada titular de EsSalud, sus familiares pueden solicitar el reembolso de los gastos de sepelio, con un monto máximo de S/&nbsp;2&nbsp;070. El plazo es de hasta seis meses desde el fallecimiento.</li>
+  <li><strong>AFP, ONP o SIS.</strong> Según el sistema al que estaba afiliada la persona, puede existir un reembolso de gastos de sepelio o una pensión de sobrevivencia. Consulte directamente con la entidad.</li>
+  <li><strong>Bancos, servicios y sucesión.</strong> Cuentas, seguros, servicios a su nombre y la sucesión intestada o testamento pueden esperar unas semanas. No tienen que resolverse en los primeros días.</li>
+</ul>
+<h3>Qué puede esperar emocionalmente</h3>
+<p>Es frecuente sentir cansancio, dificultad para concentrarse, olvidos o una tristeza que llega por oleadas. Algunas personas sienten alivio, enojo o culpa, y todo ello es parte del duelo. Durante estas semanas:</p>
+<ul>
+  <li>Evite tomar decisiones grandes e irreversibles, como vender una casa o mudarse, si no son urgentes.</li>
+  <li>Coma, hidrátese y descanse aunque no tenga ganas. El cuerpo también vive la pérdida.</li>
+  <li>Acepte la ayuda concreta que le ofrezcan: cocinar, cuidar a los niños, acompañar en un trámite.</li>
+  <li>Si la tristeza le impide funcionar después de varias semanas, busque apoyo profesional. La Línea 113, opción 5, del Ministerio de Salud brinda orientación en salud mental gratuita.</li>
+</ul>
+<p class="nota">Información referencial. Requisitos, montos y plazos pueden cambiar: confírmelos en <a href="https://www.gob.pe" target="_blank" rel="noopener">gob.pe</a> o con la entidad correspondiente. Si necesita orientación, nuestro equipo puede ayudarle: <a href="#contacto">contáctenos</a>.</p>
+        <div class="callrow"><a class="btn primary" href="#orientacion">Volver a Memoria y orientación</a></div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- =================== ARTÍCULO: NIÑOS Y ADULTOS MAYORES =================== -->
+<div class="page" id="art-ninos-mayores" data-page="orientacion" data-title="Niños y adultos mayores · Memoria y orientación" hidden>
+  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/art-ninos-mayores.jpg" alt="Una abuela abraza con cariño a una niña" loading="lazy"><figcaption>Foto: Unsplash</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Duelo · 5 min de lectura</p><h1>Acompañar a niños y adultos mayores</h1><p>Ideas sencillas para conversar y estar presentes.</p></div></section>
+  <nav class="crumbs" aria-label="Ruta"><div class="wrap"><ol><li><a href="#inicio">Inicio</a></li><li><a href="#orientacion">Memoria y orientación</a></li><li aria-current="page">Niños y adultos mayores</li></ol></div></nav>
+  <div class="wrap sidecols">
+    <nav class="sidenav" aria-label="Artículos"><p>Artículos</p><a href="#art-primeros-dias">Los primeros días</a><a href="#art-ninos-mayores" aria-current="page">Niños y adultos mayores</a><a href="#art-elegir-espacio">Elegir un espacio</a><a href="#art-hablar-familia">Hablar en familia</a><a href="#art-recordar">Recordar a un ser querido</a><a href="#art-cuidar-espacio">Cuidar un espacio de memoria</a></nav>
+    <div class="content">
+      <article class="lectura">
+<p class="lead">Los niños y las personas mayores viven el duelo de forma distinta a los adultos jóvenes. No necesitan explicaciones perfectas, sino verdad, cercanía y tiempo. Estas ideas pueden ayudarle a acompañarlos.</p>
+<h3>Hablar con los niños según su edad</h3>
+<ul>
+  <li><strong>Menores de 3 años.</strong> Todavía no entienden qué es la muerte, pero sí notan la ausencia y el cambio en el ánimo de la casa. Lo que más necesitan es mantener sus rutinas y recibir mucho contacto y cariño.</li>
+  <li><strong>De 3 a 5 años.</strong> Pueden creer que la muerte es temporal o reversible y preguntar una y otra vez cuándo volverá la persona. Responda con paciencia y con las mismas palabras sencillas cada vez.</li>
+  <li><strong>De 6 a 10 años.</strong> Empiezan a comprender que la muerte es definitiva y universal. Pueden aparecer miedos (“¿tú también te vas a morir?”) y preguntas muy concretas. Contéstelas con honestidad.</li>
+  <li><strong>Adolescentes.</strong> Entienden la muerte como un adulto, pero a veces prefieren hablar con amigos o mostrarse indiferentes. Hágales saber que está disponible, sin presionar.</li>
+</ul>
+<h3>Qué ayuda y qué conviene evitar</h3>
+<ul>
+  <li><strong>Diga la verdad con palabras simples:</strong> “Murió. Su cuerpo dejó de funcionar y ya no va a volver”.</li>
+  <li><strong>Evite eufemismos</strong> como “se fue de viaje” o “se quedó dormido”. Confunden a los niños y pueden generar miedo a dormir o a que alguien viaje.</li>
+  <li><strong>Permita que participen</strong> en el velatorio, el sepelio o una despedida sencilla si lo desean, explicándoles antes qué van a ver. Nunca los obligue.</li>
+  <li><strong>Muestre sus emociones.</strong> Llorar delante de ellos les enseña que la tristeza se puede expresar y compartir.</li>
+  <li><strong>Ofrezca formas de despedirse:</strong> un dibujo, una carta, una flor para el día de la visita.</li>
+</ul>
+<h3>Acompañar a los adultos mayores</h3>
+<p>Para una persona mayor, la pérdida de su pareja, un hermano o un amigo de toda la vida suele traer consigo cambios en su rutina, su compañía diaria y, a veces, su independencia.</p>
+<ul>
+  <li><strong>Visítelos o llámelos con frecuencia,</strong> sobre todo en las semanas posteriores, cuando las visitas de los demás disminuyen.</li>
+  <li><strong>Ayude con lo práctico:</strong> trámites, compras, citas médicas y control de sus medicamentos.</li>
+  <li><strong>Inclúyalos en las decisiones</strong> sobre la despedida y el lugar de descanso. Sentirse tenidos en cuenta es parte de su duelo.</li>
+  <li><strong>Escuche sus recuerdos,</strong> aunque los repita. Contar la historia una y otra vez ayuda a procesar la pérdida.</li>
+  <li><strong>Acompáñelos al cementerio</strong> si desean visitar a su ser querido y no pueden ir solos.</li>
+</ul>
+<h3>Señales para buscar ayuda profesional</h3>
+<p>Consulte con un psicólogo o con el médico de cabecera si, después de varias semanas, el niño o la persona mayor deja de comer o dormir, se aísla por completo, pierde interés en todo, presenta cambios bruscos de conducta o expresa que no quiere seguir viviendo. La Línea 113, opción 5, del Ministerio de Salud ofrece orientación gratuita.</p>
+<p class="nota">Información referencial. Requisitos, montos y plazos pueden cambiar: confírmelos en <a href="https://www.gob.pe" target="_blank" rel="noopener">gob.pe</a> o con la entidad correspondiente. Si necesita orientación, nuestro equipo puede ayudarle: <a href="#contacto">contáctenos</a>.</p>
+        <div class="callrow"><a class="btn primary" href="#orientacion">Volver a Memoria y orientación</a></div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- =================== ARTÍCULO: ELEGIR UN ESPACIO =================== -->
+<div class="page" id="art-elegir-espacio" data-page="orientacion" data-title="Elegir un espacio · Memoria y orientación" hidden>
+  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/art-elegir-espacio.jpg" alt="Pared de nichos con lápidas de mármol y plantas" loading="lazy"><figcaption>Foto: Unsplash</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Previsión · 4 min de lectura</p><h1>Qué conviene saber antes de elegir un espacio</h1><p>Diferencias entre nicho, tumba, mausoleo y columbario.</p></div></section>
+  <nav class="crumbs" aria-label="Ruta"><div class="wrap"><ol><li><a href="#inicio">Inicio</a></li><li><a href="#orientacion">Memoria y orientación</a></li><li aria-current="page">Elegir un espacio</li></ol></div></nav>
+  <div class="wrap sidecols">
+    <nav class="sidenav" aria-label="Artículos"><p>Artículos</p><a href="#art-primeros-dias">Los primeros días</a><a href="#art-ninos-mayores">Niños y adultos mayores</a><a href="#art-elegir-espacio" aria-current="page">Elegir un espacio</a><a href="#art-hablar-familia">Hablar en familia</a><a href="#art-recordar">Recordar a un ser querido</a><a href="#art-cuidar-espacio">Cuidar un espacio de memoria</a></nav>
+    <div class="content">
+      <article class="lectura">
+<p class="lead">Elegir un espacio con anticipación permite comparar con calma, decidir en familia y acceder a planes de pago. Estas son las opciones más comunes y las preguntas que conviene hacerse antes de decidir.</p>
+<h3>Las opciones, en pocas palabras</h3>
+<ul>
+  <li><strong>Nicho.</strong> Espacio en un pabellón, para una persona. Es la opción más accesible y la más habitual en Lima. <a href="#nichos">Ver nichos</a>.</li>
+  <li><strong>Tumba.</strong> Sepultura en tierra, a nivel del suelo, con lápida. Suele ofrecer un entorno más abierto y ajardinado. <a href="#mausoleo-tumba">Ver tumbas</a>.</li>
+  <li><strong>Mausoleo.</strong> Construcción familiar que reúne a varias personas en un mismo lugar; algunos incluyen una pequeña capilla. Es una decisión de largo plazo para toda la familia. <a href="#mausoleo-capilla">Ver mausoleos</a>.</li>
+  <li><strong>Columbario.</strong> Espacio pequeño para conservar las cenizas después de una cremación. <a href="#columbarios">Ver columbarios</a>.</li>
+</ul>
+<h3>Preguntas que ayudan a decidir</h3>
+<ol>
+  <li><strong>¿Para cuántas personas?</strong> Si la familia quiere permanecer unida, un mausoleo o espacios contiguos pueden ser la mejor opción.</li>
+  <li><strong>¿Sepultura o cremación?</strong> Conversarlo antes evita dudas en un momento difícil. Si se elige la cremación, el columbario es el destino natural de las cenizas.</li>
+  <li><strong>¿Cuál es el presupuesto?</strong> Considere el precio del espacio y también los costos posteriores: lápida, ornamentos y mantenimiento.</li>
+  <li><strong>¿Quién visitará el lugar?</strong> Piense en la ubicación dentro del cementerio y en la accesibilidad para personas mayores o con movilidad reducida.</li>
+  <li><strong>¿Qué tipo de derecho se adquiere?</strong> Pregunte si el uso del espacio es temporal o perpetuo y qué documentos recibirá.</li>
+</ol>
+<h3>Antes de firmar</h3>
+<ul>
+  <li>Pida la propuesta por escrito, con precios, condiciones y plan de pago.</li>
+  <li>Visite el espacio en persona si le es posible.</li>
+  <li>Verifique qué incluye el precio y qué se paga aparte.</li>
+  <li>Guarde el contrato y el título en un lugar que su familia conozca.</li>
+</ul>
+<p>Nuestros asesores pueden explicarle cada opción sin compromiso. <a href="#asesor">Hable con un asesor</a>.</p>
+<p class="nota">Información referencial. Requisitos, montos y plazos pueden cambiar: confírmelos en <a href="https://www.gob.pe" target="_blank" rel="noopener">gob.pe</a> o con la entidad correspondiente. Si necesita orientación, nuestro equipo puede ayudarle: <a href="#contacto">contáctenos</a>.</p>
+        <div class="callrow"><a class="btn primary" href="#orientacion">Volver a Memoria y orientación</a></div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- =================== ARTÍCULO: HABLAR EN FAMILIA =================== -->
+<div class="page" id="art-hablar-familia" data-page="orientacion" data-title="Hablar en familia · Memoria y orientación" hidden>
+  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/art-hablar-familia.jpg" alt="Una familia conversa alrededor de la mesa del comedor" loading="lazy"><figcaption>Foto: Unsplash</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Previsión · 3 min de lectura</p><h1>Cómo hablar de previsión en familia</h1><p>Una conversación que evita decisiones apresuradas.</p></div></section>
+  <nav class="crumbs" aria-label="Ruta"><div class="wrap"><ol><li><a href="#inicio">Inicio</a></li><li><a href="#orientacion">Memoria y orientación</a></li><li aria-current="page">Hablar en familia</li></ol></div></nav>
+  <div class="wrap sidecols">
+    <nav class="sidenav" aria-label="Artículos"><p>Artículos</p><a href="#art-primeros-dias">Los primeros días</a><a href="#art-ninos-mayores">Niños y adultos mayores</a><a href="#art-elegir-espacio">Elegir un espacio</a><a href="#art-hablar-familia" aria-current="page">Hablar en familia</a><a href="#art-recordar">Recordar a un ser querido</a><a href="#art-cuidar-espacio">Cuidar un espacio de memoria</a></nav>
+    <div class="content">
+      <article class="lectura">
+<p class="lead">Hablar de la propia despedida no es fácil, pero es uno de los gestos más considerados hacia quienes queremos. Una conversación a tiempo evita que la familia tenga que adivinar o decidir con prisa en el peor momento.</p>
+<h3>Por qué vale la pena hablarlo</h3>
+<ul>
+  <li>Sus deseos se respetan porque todos los conocen.</li>
+  <li>Se reducen las discusiones y la carga emocional cuando llega el momento.</li>
+  <li>Se puede comparar opciones con calma y pagar en cuotas, sin urgencia.</li>
+</ul>
+<h3>Cómo empezar</h3>
+<ul>
+  <li><strong>Elija un momento tranquilo,</strong> sin apuros ni conflictos de por medio: una sobremesa o un domingo en casa.</li>
+  <li><strong>Aproveche una ocasión natural:</strong> el fallecimiento de un conocido, un trámite de seguro o un aniversario familiar.</li>
+  <li><strong>Hable en primera persona:</strong> “Me quedaría más tranquilo si dejamos esto organizado”, en lugar de “Ustedes tienen que…”.</li>
+  <li><strong>Escuche más de lo que habla.</strong> Cada persona puede tener creencias y preferencias distintas.</li>
+</ul>
+<h3>Qué conversar</h3>
+<ol>
+  <li>Sepultura o cremación.</li>
+  <li>Tipo de espacio y cementerio de preferencia.</li>
+  <li>Ceremonia: religiosa o no, íntima o abierta, música o lecturas especiales.</li>
+  <li>Presupuesto y cómo se financiará.</li>
+  <li>Quién se encargará de los trámites cuando llegue el momento.</li>
+  <li>Dónde están los documentos importantes: DNI, título del espacio, seguros y contratos.</li>
+</ol>
+<h3>Deje todo por escrito</h3>
+<p>Anote lo acordado y compártalo con al menos dos personas de confianza. Revíselo cada cierto tiempo, porque las preferencias pueden cambiar. Si desea dejar el espacio y el servicio contratados con anticipación, conozca nuestros <a href="#beneficios">planes personalizados</a> o <a href="#asesor">hable con un asesor</a>.</p>
+<p class="nota">Información referencial. Requisitos, montos y plazos pueden cambiar: confírmelos en <a href="https://www.gob.pe" target="_blank" rel="noopener">gob.pe</a> o con la entidad correspondiente. Si necesita orientación, nuestro equipo puede ayudarle: <a href="#contacto">contáctenos</a>.</p>
+        <div class="callrow"><a class="btn primary" href="#orientacion">Volver a Memoria y orientación</a></div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- =================== ARTÍCULO: RECORDAR A UN SER QUERIDO =================== -->
+<div class="page" id="art-recordar" data-page="orientacion" data-title="Recordar a un ser querido · Memoria y orientación" hidden>
+  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/art-recordar.jpg" alt="Una vela encendida sobre una mesa de madera" loading="lazy"><figcaption>Foto: Unsplash</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Homenajes · 5 min de lectura</p><h1>Ideas para recordar a un ser querido</h1><p>Fechas, visitas y pequeños gestos.</p></div></section>
+  <nav class="crumbs" aria-label="Ruta"><div class="wrap"><ol><li><a href="#inicio">Inicio</a></li><li><a href="#orientacion">Memoria y orientación</a></li><li aria-current="page">Recordar a un ser querido</li></ol></div></nav>
+  <div class="wrap sidecols">
+    <nav class="sidenav" aria-label="Artículos"><p>Artículos</p><a href="#art-primeros-dias">Los primeros días</a><a href="#art-ninos-mayores">Niños y adultos mayores</a><a href="#art-elegir-espacio">Elegir un espacio</a><a href="#art-hablar-familia">Hablar en familia</a><a href="#art-recordar" aria-current="page">Recordar a un ser querido</a><a href="#art-cuidar-espacio">Cuidar un espacio de memoria</a></nav>
+    <div class="content">
+      <article class="lectura">
+<p class="lead">Recordar no es quedarse en la pérdida: es mantener viva una relación de otra manera. No hay una forma correcta de hacerlo. Estas ideas pueden inspirarle a encontrar la suya.</p>
+<h3>Fechas para reunirse</h3>
+<ul>
+  <li><strong>Su cumpleaños y el aniversario de su partida.</strong> Una visita, una misa o una comida con su plato favorito.</li>
+  <li><strong>Día de Todos los Santos y de los Fieles Difuntos</strong> (1 y 2 de noviembre). Una tradición muy arraigada en el Perú para visitar el cementerio en familia.</li>
+  <li><strong>Día de la Madre y Día del Padre.</strong> Fechas en que muchas familias se reúnen en el cementerio.</li>
+</ul>
+<h3>Durante la visita</h3>
+<ul>
+  <li>Lleve flores artificiales para adornar el espacio. En el Cementerio Del Ángel solo se permiten flores artificiales; duran más y mantienen el lugar ordenado.</li>
+  <li>Comparta recuerdos y anécdotas en voz alta, sobre todo con los más pequeños.</li>
+  <li>Dedique unos minutos a una oración, una canción o simplemente al silencio.</li>
+  <li>Respete los horarios y las <a href="#normas">normas de visita</a> del cementerio.</li>
+</ul>
+<h3>Gestos en casa</h3>
+<ul>
+  <li><strong>Un rincón de memoria</strong> con una fotografía, una vela o un objeto significativo.</li>
+  <li><strong>Un álbum o una caja de recuerdos</strong> con fotos, cartas y objetos, que la familia pueda completar con el tiempo.</li>
+  <li><strong>Su receta favorita,</strong> cocinada en las fechas especiales.</li>
+  <li><strong>Una carta</strong> en la que le cuente lo que ha pasado o lo que le habría querido decir.</li>
+  <li><strong>Su música,</strong> en una lista que la familia pueda escuchar junta.</li>
+</ul>
+<h3>Gestos que trascienden</h3>
+<ul>
+  <li>Plantar un árbol o cuidar una planta en su nombre.</li>
+  <li>Hacer una donación o un voluntariado en una causa que le importaba.</li>
+  <li>Transmitir a los más jóvenes su historia, sus dichos y sus enseñanzas.</li>
+</ul>
+<p>Cada familia encuentra su propio ritmo. Lo importante es que el recuerdo sea un espacio de encuentro y no una obligación.</p>
+<p class="nota">Información referencial. Requisitos, montos y plazos pueden cambiar: confírmelos en <a href="https://www.gob.pe" target="_blank" rel="noopener">gob.pe</a> o con la entidad correspondiente. Si necesita orientación, nuestro equipo puede ayudarle: <a href="#contacto">contáctenos</a>.</p>
+        <div class="callrow"><a class="btn primary" href="#orientacion">Volver a Memoria y orientación</a></div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- =================== ARTÍCULO: CUIDAR UN ESPACIO DE MEMORIA =================== -->
+<div class="page" id="art-cuidar-espacio" data-page="orientacion" data-title="Cuidar un espacio de memoria · Memoria y orientación" hidden>
+  <section class="phero"><div class="slides"><figure class="slide on"><img src="img/art-cuidar-espacio.jpg" alt="Un jarrón con flores blancas sobre una lápida" loading="lazy"><figcaption>Foto: Unsplash</figcaption></figure></div><div class="wrap"><p class="eyebrow" style="color:var(--celeste)">Homenajes · 3 min de lectura</p><h1>Cuidar un espacio de memoria</h1><p>Mantenimiento, flores y recomendaciones.</p></div></section>
+  <nav class="crumbs" aria-label="Ruta"><div class="wrap"><ol><li><a href="#inicio">Inicio</a></li><li><a href="#orientacion">Memoria y orientación</a></li><li aria-current="page">Cuidar un espacio de memoria</li></ol></div></nav>
+  <div class="wrap sidecols">
+    <nav class="sidenav" aria-label="Artículos"><p>Artículos</p><a href="#art-primeros-dias">Los primeros días</a><a href="#art-ninos-mayores">Niños y adultos mayores</a><a href="#art-elegir-espacio">Elegir un espacio</a><a href="#art-hablar-familia">Hablar en familia</a><a href="#art-recordar">Recordar a un ser querido</a><a href="#art-cuidar-espacio" aria-current="page">Cuidar un espacio de memoria</a></nav>
+    <div class="content">
+      <article class="lectura">
+<p class="lead">Un espacio limpio y bien cuidado es una forma silenciosa de homenaje. Con algunos cuidados sencillos en cada visita, el lugar se conserva digno por muchos años.</p>
+<h3>Limpieza de la lápida</h3>
+<ul>
+  <li>Use agua y un paño suave o una esponja. Para manchas, un poco de jabón neutro es suficiente.</li>
+  <li><strong>Evite lejía, ácidos y productos abrasivos:</strong> dañan el mármol y el granito y borran las inscripciones.</li>
+  <li>No use cepillos metálicos ni espátulas sobre las letras o el relieve.</li>
+  <li>Seque al final para evitar que queden marcas de agua.</li>
+</ul>
+<h3>Flores y adornos</h3>
+<ul>
+  <li>En el Cementerio Del Ángel <strong>solo se permiten flores artificiales.</strong> Elija flores de buena calidad, que resistan el sol, y renuévelas cuando pierdan el color.</li>
+  <li>Retire los adornos dañados o descoloridos en cada visita.</li>
+  <li>Mantenga los floreros bien fijos para que no se caigan ni afecten los espacios vecinos.</li>
+</ul>
+<h3>Lápidas, rejas y otros trabajos</h3>
+<p>Colocar, cambiar o retirar una lápida o una reja, así como enchapes o trabajos de embellecimiento, requiere una autorización previa del cementerio. Consulte los <a href="#ornamentos">requisitos para ornamentos funerarios</a> antes de contratar cualquier trabajo.</p>
+<h3>Buenas prácticas en cada visita</h3>
+<ul>
+  <li>Lleve una bolsa para retirar la basura y los restos de adornos.</li>
+  <li>Cuide los espacios de otras familias y no apoye objetos sobre ellos.</li>
+  <li>Revise si hay fisuras, letras desprendidas o humedad, y comuníquelo en la oficina del cementerio.</li>
+  <li>Respete los horarios y las <a href="#normas">normas de visita</a>.</li>
+</ul>
+<p>Si no puede visitar el espacio con frecuencia, consulte con nuestro equipo por las opciones de mantenimiento. <a href="#contacto">Contáctenos</a>.</p>
+<p class="nota">Información referencial. Requisitos, montos y plazos pueden cambiar: confírmelos en <a href="https://www.gob.pe" target="_blank" rel="noopener">gob.pe</a> o con la entidad correspondiente. Si necesita orientación, nuestro equipo puede ayudarle: <a href="#contacto">contáctenos</a>.</p>
+        <div class="callrow"><a class="btn primary" href="#orientacion">Volver a Memoria y orientación</a></div>
+      </article>
     </div>
   </div>
 </div>
@@ -1588,7 +1853,7 @@ form.quote .check{color:#DCE5EF}
     bf.querySelector('button[data-via="whatsapp"]').addEventListener('click',function(){
       if(!bf.checkValidity()){ bf.reportValidity(); return; }
       var v=function(n){ return bf.elements[n].value.trim(); };
-      var txt='Solicitud de verificación de datos\nDifunto: '+v('difunto')+'\nFecha de nacimiento: '+v('nacimiento')+'\nFecha de fallecimiento: '+v('fecha')+'\nSolicitante: '+v('solicitante')+'\nTeléfono: '+v('telefono');
+      var txt='Solicitud de verificación de datos\nDifunto: '+v('difunto')+'\nFecha de fallecimiento: '+v('fecha')+'\nSolicitante: '+v('solicitante')+'\nTeléfono: '+v('telefono');
       window.open('https://wa.me/51912610585?text='+encodeURIComponent(txt),'_blank','noopener');
     });
   }
